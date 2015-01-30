@@ -3,6 +3,7 @@
   else if (typeof module != 'undefined') module.exports = definition()
   else context[name] = definition()
 }('klass', this, function () {
+	
   var context = this
     , f = 'function'
     , fnTest = /xyz/.test(function () {xyz}) ? /\bsupr\b/ : /.*/

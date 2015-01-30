@@ -1030,7 +1030,7 @@ console.log(Math.cbrt(2));                           // 1.2599210498948734</code
             
 <dt>
     
-        <h4 class="name" id="ceil10"><span class="type-signature">(static) </span>ceil10<span class="signature">(x)</span><span class="type-signature"> &rarr; {number}</span></h4>
+        <h4 class="name" id="ceil10"><span class="type-signature">(static) </span>ceil10<span class="signature">(num, exp<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
         
     
@@ -1063,7 +1063,11 @@ console.log(Math.cbrt(2));                           // 1.2599210498948734</code
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1075,7 +1079,7 @@ console.log(Math.cbrt(2));                           // 1.2599210498948734</code
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>num</code></td>
             
 
             <td class="type">
@@ -1088,10 +1092,61 @@ console.log(Math.cbrt(2));                           // 1.2599210498948734</code
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">数字</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">要调整精度的数字</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>exp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">精确到 10 的几次方</td>
         </tr>
 
     
@@ -2240,7 +2295,7 @@ console.log(Math.fibonacci(7));                      // 13</code></pre>
             
 <dt>
     
-        <h4 class="name" id="floor10"><span class="type-signature">(static) </span>floor10<span class="signature">(x)</span><span class="type-signature"> &rarr; {number}</span></h4>
+        <h4 class="name" id="floor10"><span class="type-signature">(static) </span>floor10<span class="signature">(num, exp<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
         
     
@@ -2273,7 +2328,11 @@ console.log(Math.fibonacci(7));                      // 13</code></pre>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2285,7 +2344,7 @@ console.log(Math.fibonacci(7));                      // 13</code></pre>
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>num</code></td>
             
 
             <td class="type">
@@ -2298,10 +2357,61 @@ console.log(Math.fibonacci(7));                      // 13</code></pre>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">数字</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">要调整精度的数字</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>exp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">精确到 10 的几次方</td>
         </tr>
 
     
@@ -3942,7 +4052,7 @@ console.log(Math.rnd(10, 1, false));</code></pre>
             
 <dt>
     
-        <h4 class="name" id="round10"><span class="type-signature">(static) </span>round10<span class="signature">(x)</span><span class="type-signature"> &rarr; {number}</span></h4>
+        <h4 class="name" id="round10"><span class="type-signature">(static) </span>round10<span class="signature">(num, exp<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
         
     
@@ -3975,7 +4085,11 @@ console.log(Math.rnd(10, 1, false));</code></pre>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -3987,7 +4101,7 @@ console.log(Math.rnd(10, 1, false));</code></pre>
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>num</code></td>
             
 
             <td class="type">
@@ -4000,10 +4114,61 @@ console.log(Math.rnd(10, 1, false));</code></pre>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">数字</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">要调整精度的数字</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>exp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">精确到 10 的几次方</td>
         </tr>
 
     
@@ -4097,6 +4262,7 @@ console.log(Math.rnd(10, 1, false));</code></pre>
         
     <pre class="prettyprint"><code>console.log(Math.round10(55.55, -1));                // 55.6
 console.log(Math.round10(55.549, -1));               // 55.5
+console.log(Math.round10(55.549, -2));               // 55.55
 console.log(Math.round10(55, 1));                    // 60
 console.log(Math.round10(54.9, 1));                  // 50
 console.log(Math.round10(-55.55, -1));               // -55.5
@@ -4796,7 +4962,7 @@ console.log(Math.trunc(NaN));                        // NaN</code></pre>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sat Jan 31 2015 01:14:23 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sat Jan 31 2015 04:38:59 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
