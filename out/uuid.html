@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line156">line 156</a>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line166">line 166</a>
     </li></ul></dd>
     
 
@@ -312,7 +312,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line216">line 216</a>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line265">line 265</a>
     </li></ul></dd>
     
 
@@ -536,7 +536,7 @@ console.log(uuid.unparse(bytes));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line230">line 230</a>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line279">line 279</a>
     </li></ul></dd>
     
 
@@ -914,7 +914,7 @@ console.log(uuid.unparse(bytes));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line164">line 164</a>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line174">line 174</a>
     </li></ul></dd>
     
 
@@ -926,7 +926,11 @@ console.log(uuid.unparse(bytes));</code></pre>
         <ul>
             <li><a href="external-Math.html#guid">external:Math.guid</a></li>
         
+            <li><a href="uuid.html#v3">uuid.v3</a></li>
+        
             <li><a href="uuid.html#v4">uuid.v4</a></li>
+        
+            <li><a href="uuid.html#v5">uuid.v5</a></li>
         </ul>
     </dd>
     
@@ -981,6 +985,198 @@ console.log(uuid.v1({
 }));
 
 console.log(uuid.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 58 0b 48 8e 4f c1 15])</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="v3"><span class="type-signature">(static) </span>v3<span class="signature">(ns, name)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        使用 MD5 算法生成一个符合 RFC4122,v3 规则的 UUID(Universally Unique IDentifier)。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">命名空间的 UUID</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要编码的URL 或 DNS</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line230">line 230</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="external-Math.html#guid">external:Math.guid</a></li>
+        
+            <li><a href="crypto.html#md5">crypto.md5</a></li>
+        
+            <li><a href="uuid.html#v1">uuid.v1</a></li>
+        
+            <li><a href="uuid.html#v4">uuid.v4</a></li>
+        
+            <li><a href="uuid.html#v5">uuid.v5</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(uuid.v3('00000000-0000-0000-0000-000000000000', 'google');
+console.log(uuid.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
 
     
 </dd>
@@ -1256,7 +1452,7 @@ console.log(uuid.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 5
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line191">line 191</a>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line203">line 203</a>
     </li></ul></dd>
     
 
@@ -1269,6 +1465,10 @@ console.log(uuid.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 5
             <li><a href="external-Math.html#guid">external:Math.guid</a></li>
         
             <li><a href="uuid.html#v1">uuid.v1</a></li>
+        
+            <li><a href="uuid.html#v3">uuid.v3</a></li>
+        
+            <li><a href="uuid.html#v5">uuid.v5</a></li>
         </ul>
     </dd>
     
@@ -1327,6 +1527,198 @@ console.log(uuid.v4(null, new Array(32), 0));</code></pre>
     
 </dd>
 
+        
+            
+<dt>
+    
+        <h4 class="name" id="v5"><span class="type-signature">(static) </span>v5<span class="signature">(ns, name)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        使用 SHA-1 算法生成一个符合 RFC4122,v5 规则的 UUID(Universally Unique IDentifier)。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">命名空间的 UUID</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要编码的URL 或 DNS</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="uuid_uuid.js.html">uuid/uuid.js</a>, <a href="uuid_uuid.js.html#line248">line 248</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="external-Math.html#guid">external:Math.guid</a></li>
+        
+            <li><a href="crypto.html#sha1">crypto.sha1</a></li>
+        
+            <li><a href="uuid.html#v1">uuid.v1</a></li>
+        
+            <li><a href="uuid.html#v3">uuid.v3</a></li>
+        
+            <li><a href="uuid.html#v4">uuid.v4</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(uuid.v5('00000000-0000-0000-0000-000000000000', 'google');
+console.log(uuid.v5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
+
+    
+</dd>
+
         </dl>
     
 
@@ -1349,7 +1741,7 @@ console.log(uuid.v4(null, new Array(32), 0));</code></pre>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Fri Jan 30 2015 12:02:06 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Fri Jan 30 2015 23:58:51 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
