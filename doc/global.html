@@ -501,7 +501,7 @@ console.log(classof(NaN));             // number</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="misc_cp.js.html">misc/cp.js</a>, <a href="misc_cp.js.html#line31">line 31</a>
+        <a href="misc_cp.js.html">misc/cp.js</a>, <a href="misc_cp.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -822,7 +822,7 @@ console.log(x.b == y.b);  // false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="misc_each.js.html">misc/each.js</a>, <a href="misc_each.js.html#line44">line 44</a>
+        <a href="misc_each.js.html">misc/each.js</a>, <a href="misc_each.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -1294,6 +1294,287 @@ var o2 = inherit(Object.prototype);</code></pre>
             
 <dt>
     
+        <h4 class="name" id="klass"><span class="type-signature"></span>klass<span class="signature">(parentClass<span class="signature-attributes">opt</span>, instanceMembers<span class="signature-attributes">opt</span>, staticMembers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {class}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        新建一个类，并为其批量添加静态字段和实例字段。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>parentClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">class</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <a href="Class.html">Class</a>
+                
+                </td>
+            
+
+            <td class="description last">父类</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>instanceMembers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">实例字段字典</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>staticMembers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">静态字段字典</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="misc_klass.js.html">misc/klass.js</a>, <a href="misc_klass.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Class.html">Class</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">class</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var A=klass({i:1});
+var B=klass({i:2},{i:3});
+var C=klass(A,{i:4});
+var D=klass(B,{i:5},{i:6});
+var a=new A();
+var b=new B();
+var c=new C();
+var d=new D();
+console.log(A.i);    // undefined
+console.log(a.i);    // 1
+console.log(B.i);    // 3
+console.log(b.i);    // 2
+console.log(C.i);    // undefined
+console.log(c.i);    // 4
+console.log(D.i);    // 6
+console.log(d.i);    // 5
+
+var X = klass({
+    init : function (a, b) {
+        this.c = a + b;
+    }
+});
+var Y = klass(X, {
+    init : function (b) {
+        this._super(30, b);
+    }
+});
+console.log(new Y(3).c);     // 33</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
         <h4 class="name" id="unzip"><span class="type-signature"></span>unzip<span class="signature">(str, separatorList<span class="signature-attributes">opt</span>, toObject<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array|object}</span></h4>
 
         
@@ -1704,7 +1985,7 @@ console.log(unzip('a=b,c=d', ',=', true));   // { a: 'b', c: 'd' }</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="misc_zip.js.html">misc/zip.js</a>, <a href="misc_zip.js.html#line21">line 21</a>
+        <a href="misc_zip.js.html">misc/zip.js</a>, <a href="misc_zip.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -1927,7 +2208,7 @@ console.log(zip(['x', 'y', 'z'], [1, 2, 3]));
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="misc_each.js.html">misc/each.js</a>, <a href="misc_each.js.html#line76">line 76</a>
+        <a href="misc_each.js.html">misc/each.js</a>, <a href="misc_each.js.html#line75">line 75</a>
     </li></ul></dd>
     
 
@@ -1989,13 +2270,13 @@ console.log(zip(['x', 'y', 'z'], [1, 2, 3]));
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#inherit">inherit</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#inherit">inherit</a></li><li><a href="global.html#klass">klass</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sat Jan 31 2015 04:38:59 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 01 2015 05:57:00 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
