@@ -556,7 +556,7 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
             
 <dt>
     
-        <h4 class="name" id="create"><span class="type-signature">(static) </span>create<span class="signature">(proto, props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+        <h4 class="name" id="create"><span class="type-signature">(static) </span>create<span class="signature">(proto<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
         
     
@@ -594,6 +594,8 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -619,37 +621,6 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
             
                 <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">被用于创建新对象的原型对象</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>props</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
                     &lt;optional><br>
                 
 
@@ -660,8 +631,14 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
             
 
             
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
 
-            <td class="description last">如果指定了此参数，此对象的所有可枚举自有属性将被传递给新建对象</td>
+            <td class="description last">被用于创建新对象的原型对象</td>
         </tr>
 
     
@@ -699,7 +676,7 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object_create.js.html">object/create.js</a>, <a href="object_create.js.html#line13">line 13</a>
+        <a href="object_create.js.html">object/create.js</a>, <a href="object_create.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -709,7 +686,11 @@ console.log(x.pattern == y.pattern);  // true</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>object</li>
+            <li><a href="global.html#proto">proto</a></li>
+        
+            <li><a href="global.html#klass">klass</a></li>
+        
+            <li><a href="Class.html">Class</a></li>
         </ul>
     </dd>
     
@@ -1999,6 +1980,177 @@ console.log(Object.keys(Object.prototype));</code></pre>
             
 <dt>
     
+        <h4 class="name" id="namespace"><span class="type-signature">(static) </span>namespace<span class="signature">(ns)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        根据指定的路径获取对命名空间的引用。路径中不存在的命名空间将被自动创建。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">符合 a.b.c 格式的命名空间完整路径</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object_namespace.js.html">object/namespace.js</a>, <a href="object_namespace.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="global.html#ns">ns</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    对路径最末端的命名空间的引用
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Object.namespace('window.a.z');
+Object.namespace('global.b.z');
+Object.namespace('c.z');
+Object.namespace('v');
+console.log(a);     // { z: {} }
+console.log(b);     // { z: {} }
+console.log(c);     // { z: {} }
+console.log(v);     // {}</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
         <h4 class="name" id="typeof"><span class="type-signature">(static) </span>typeof<span class="signature">(val)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
@@ -2184,13 +2336,13 @@ console.log(Object.typeof(NaN));             // NaN</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#inherit">inherit</a></li><li><a href="global.html#klass">klass</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#klass">klass</a></li><li><a href="global.html#ns">ns</a></li><li><a href="global.html#proto">proto</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 01 2015 21:30:30 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 02 2015 23:49:10 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>

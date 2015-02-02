@@ -88,7 +88,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line58">line 58</a>
+        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -98,7 +98,11 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="global.html#proto">proto</a></li>
+        
             <li><a href="global.html#klass">klass</a></li>
+        
+            <li><a href="external-Object.html#create">external:Object.create</a></li>
         
             <li><a href="http://ejohn.org/blog/simple-javascript-inheritance/">http://ejohn.org/blog/simple-javascript-inheritance/</a></li>
         
@@ -148,229 +152,6 @@
             
 <dt>
     
-        <h4 class="name" id="extend"><span class="type-signature">(static) </span>extend<span class="signature">(props)</span><span class="type-signature"> &rarr; {class}</span></h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        创建一个类。
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>props</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">添加给类的实例字段。如有必要，至少包含一个名为 init 的初始化构造函数
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>init</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">构造函数</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line65">line 65</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="Class.html#extend">Class#extend</a></li>
-        
-            <li><a href="Class.html#expand">Class#expand</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">class</span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>var Flower = Class.extend({
-    init : function (color) {
-        this.color = color;
-    },
-    dead : function () {
-        this.color = 'black';
-    }
-});
-
-var rose = new Flower('red');
-console.log(rose.color);      // red
-
-rose.dead();
-console.log(rose.color);      // black</code></pre>
-
-    
-</dd>
-
-        
-            
-<dt>
-    
         <h4 class="name" id="expand"><span class="type-signature"></span>expand<span class="signature">(props, instance<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {class}</span></h4>
 
         
@@ -380,7 +161,7 @@ console.log(rose.color);      // black</code></pre>
 
     
     <div class="description">
-        为类添加实例方法或静态方法。
+        为类添加实例字段或静态字段。
     </div>
     
 
@@ -529,7 +310,7 @@ console.log(rose.color);      // black</code></pre>
 
             
 
-            <td class="description last">添加实例方法</td>
+            <td class="description last">添加实例字段</td>
         </tr>
 
     
@@ -552,7 +333,7 @@ console.log(rose.color);      // black</code></pre>
 
             
 
-            <td class="description last">添加静态方法</td>
+            <td class="description last">添加静态字段</td>
         </tr>
 
     
@@ -596,7 +377,7 @@ console.log(rose.color);      // black</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line120">line 120</a>
+        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -606,8 +387,6 @@ console.log(rose.color);      // black</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="Class.html#extend">Class.extend</a></li>
-        
             <li><a href="Class.html#extend">Class#extend</a></li>
         </ul>
     </dd>
@@ -656,12 +435,14 @@ console.log(rose.color);      // black</code></pre>
     n: 2 
 });
 var x = new X();
-var Y = X.extend();
+var Y = X.extend().expand({
+    n: 3
+});
 var y = new Y();
 
 console.log(X.n);      // 2
 console.log(x.n);      // 1
-console.log(Y.n);      // undefined
+console.log(Y.n);      // 3
 console.log(y.n);      // 1</code></pre>
 
     
@@ -680,7 +461,7 @@ console.log(y.n);      // 1</code></pre>
 
     
     <div class="description">
-        基于当前类创建一个子类。
+        创建一个类。或基于当前类创建一个子类。
     </div>
     
 
@@ -818,7 +599,7 @@ console.log(y.n);      // 1</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line91">line 91</a>
+        <a href="class_class.js.html">class/class.js</a>, <a href="class_class.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -828,8 +609,6 @@ console.log(y.n);      // 1</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="Class.html#extend">Class.extend</a></li>
-        
             <li><a href="Class.html#expand">Class#expand</a></li>
         </ul>
     </dd>
@@ -872,7 +651,22 @@ console.log(y.n);      // 1</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>var Person = Class.extend({
+    <pre class="prettyprint"><code>var Flower = Class.extend({
+    init : function (color) {
+        this.color = color;
+    },
+    dead : function () {
+        this.color = 'black';
+    }
+});
+
+var rose = new Flower('red');
+console.log(rose.color);      // red
+
+rose.dead();
+console.log(rose.color);      // black
+
+var Person = Class.extend({
     init: function (isDancing) {
         this.dancing = isDancing;
     }
@@ -909,13 +703,13 @@ console.log(n.dancing);     // false</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#inherit">inherit</a></li><li><a href="global.html#klass">klass</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Crypto.html">Crypto</a></li><li><a href="Escape.html">Escape</a></li><li><a href="UUID.html">UUID</a></li></ul><h3>Global</h3><ul><li><a href="global.html#classof">classof</a></li><li><a href="global.html#cp">cp</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eq">eq</a></li><li><a href="global.html#klass">klass</a></li><li><a href="global.html#ns">ns</a></li><li><a href="global.html#proto">proto</a></li><li><a href="global.html#unzip">unzip</a></li><li><a href="global.html#zip">zip</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 01 2015 21:30:30 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 02 2015 23:49:10 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
