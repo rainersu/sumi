@@ -272,6 +272,12 @@
     <dd class="tag-see">
         <ul>
             <li><a href="external-Function.html#unbind">external:Function#unbind</a></li>
+        
+            <li><a href="external-Function.html#unhost">external:Function#unhost</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply</a></li>
         </ul>
     </dd>
     
@@ -313,8 +319,18 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>var slice = [].slice.bind('123');
-console.log(slice(2));             // ['3']</code></pre>
+    <pre class="prettyprint"><code>var slice = Array.prototype.slice.bind('123');
+console.log(slice(2));   // ['3']
+
+
+function list() { return Array.prototype.slice.call(arguments); }
+
+console.log(list( 1, 2, 3 ));    // [ 1, 2, 3 ]
+
+var list1 = list.bind(undefined, 37);
+
+console.log(list1( ));           // [ 37 ]
+console.log(list1( 1, 2, 3 ));   // [ 37, 1, 2, 3 ]</code></pre>
 
     
 </dd>
@@ -920,7 +936,7 @@ console.log('x'.x());   // xx</code></pre>
 
     
     <div class="description">
-        使用当前函数体创建一个新函数，将原函数的上下文对象变量 this 解绑为新函数的第一个参数。
+        使用当前函数体创建一个新函数，将原函数的上下文对象变量 this 解绑为由新函数的第一个参数手工指定。
     </div>
     
 
@@ -1035,6 +1051,12 @@ console.log('x'.x());   // xx</code></pre>
     <dd class="tag-see">
         <ul>
             <li><a href="external-Function.html#bind">external:Function#bind</a></li>
+        
+            <li><a href="external-Function.html#unhost">external:Function#unhost</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply</a></li>
         </ul>
     </dd>
     
@@ -1080,11 +1102,284 @@ console.log('x'.x());   // xx</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>var split1 = ''.split.unbind();
-console.log(split1(0.25, '.'));      // ['0', '25']
+    <pre class="prettyprint"><code>var split1 = String.prototype.split.unbind(   );
+console.log( split1(0.25, '.') );
+// ['0', '25']
 
-var split2 = ''.split.unbind('.');
-console.log(split2(0.25));           // ['0', '25']</code></pre>
+var split2 = String.prototype.split.unbind('.');
+console.log( split2(0.25) );           
+// ['0', '25']</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="unhost"><span class="type-signature"></span>unhost<span class="signature">(apply<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        使用当前函数体创建一个新函数，将原函数的上下文对象变量 this 解绑为由新函数的第一个参数手工指定。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>apply</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>false</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">使用 call  方法托管</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">使用 apply 方法托管</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="function_unhost.js.html">function/unhost.js</a>, <a href="function_unhost.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="external-Function.html#bind">external:Function#bind</a></li>
+        
+            <li><a href="external-Function.html#unbind">external:Function#unbind</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    创建出的新函数
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var slice = Array.prototype.slice.unhost();
+console.log(slice('123'));
+// [ '1', '2', '3' ]
+
+var concat = Array.prototype.concat.unhost(false);
+console.log( concat([ 1 ], [ [ 2 ], [ 3, 8 ] ]) );
+// [ 1, [ 2 ], [ 3, 8 ] ]
+
+var concat = Array.prototype.concat.unhost( true);
+console.log( concat([ 1 ], [ [ 2 ], [ 3, 8 ] ]) );
+// [ 1, 2, 3, 8 ]</code></pre>
 
     
 </dd>
@@ -1111,7 +1406,7 @@ console.log(split2(0.25));           // ['0', '25']</code></pre>
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 08 2015 00:09:56 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 08 2015 23:48:29 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
