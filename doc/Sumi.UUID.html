@@ -29,6 +29,8 @@
 <header>
     
         <h2>
+            <span class="ancestors"><a href="Sumi.html">Sumi</a>.</span>
+        
         UUID
         </h2>
         
@@ -70,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line166">line 166</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line176">line 176</a>
     </li></ul></dd>
     
 
@@ -80,7 +82,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>external:Math.guid</li>
+            <li><a href="Sumi.Math.html#uuid">Sumi.Math.uuid</a></li>
         
             <li><a href="http://github.com/broofa/node-UUID">http://github.com/broofa/node-UUID</a></li>
         
@@ -312,7 +314,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line265">line 265</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line259">line 259</a>
     </li></ul></dd>
     
 
@@ -322,7 +324,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="UUID.html#unparse">UUID.unparse</a></li>
+            <li><a href="Sumi.UUID.html#unparse">Sumi.UUID.unparse</a></li>
         </ul>
     </dd>
     
@@ -367,8 +369,8 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.parse('797ff043-11eb-11e1-80d6-510998755d10'));
-console.log(UUID.unparse(bytes));</code></pre>
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.parse('797ff043-11eb-11e1-80d6-510998755d10'));
+console.log(Sumi.UUID.unparse(bytes));</code></pre>
 
     
 </dd>
@@ -536,7 +538,7 @@ console.log(UUID.unparse(bytes));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line279">line 279</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line273">line 273</a>
     </li></ul></dd>
     
 
@@ -546,7 +548,7 @@ console.log(UUID.unparse(bytes));</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="UUID.html#parse">UUID.parse</a></li>
+            <li><a href="Sumi.UUID.html#parse">Sumi.UUID.parse</a></li>
         </ul>
     </dd>
     
@@ -588,8 +590,8 @@ console.log(UUID.unparse(bytes));</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.parse('797ff043-11eb-11e1-80d6-510998755d10'));
-console.log(UUID.unparse(bytes));</code></pre>
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.parse('797ff043-11eb-11e1-80d6-510998755d10'));
+console.log(Sumi.UUID.unparse(bytes));</code></pre>
 
     
 </dd>
@@ -914,25 +916,12 @@ console.log(UUID.unparse(bytes));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line174">line 174</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
     
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li>external:Math.guid</li>
-        
-            <li><a href="UUID.html#v3">UUID.v3</a></li>
-        
-            <li><a href="UUID.html#v4">UUID.v4</a></li>
-        
-            <li><a href="UUID.html#v5">UUID.v5</a></li>
-        </ul>
-    </dd>
     
 
     
@@ -975,9 +964,9 @@ console.log(UUID.unparse(bytes));</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.v1());
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.v1());
 
-console.log(UUID.v1({
+console.log(Sumi.UUID.v1({
     node: [0x01, 0x23, 0x45, 0x67, 0x89, 0xab],
     clockseq: 0x1234,
     msecs: new Date('2011-11-01').getTime(),
@@ -1115,7 +1104,7 @@ console.log(UUID.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 5
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line230">line 230</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line232">line 232</a>
     </li></ul></dd>
     
 
@@ -1125,15 +1114,7 @@ console.log(UUID.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 5
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>external:Math.guid</li>
-        
-            <li>Crypto.md5</li>
-        
-            <li><a href="UUID.html#v1">UUID.v1</a></li>
-        
-            <li><a href="UUID.html#v4">UUID.v4</a></li>
-        
-            <li><a href="UUID.html#v5">UUID.v5</a></li>
+            <li><a href="Sumi.Crypto.html#md5">Sumi.Crypto.md5</a></li>
         </ul>
     </dd>
     
@@ -1175,8 +1156,8 @@ console.log(UUID.v1(null, new Array(32), 0));   // [02 a2 ce 90 14 32 11 e1 85 5
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.v3('00000000-0000-0000-0000-000000000000', 'google');
-console.log(UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.v3('00000000-0000-0000-0000-000000000000', 'google');
+console.log(Sumi.UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
 
     
 </dd>
@@ -1452,25 +1433,12 @@ console.log(UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</cod
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line203">line 203</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line209">line 209</a>
     </li></ul></dd>
     
 
     
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li>external:Math.guid</li>
-        
-            <li><a href="UUID.html#v1">UUID.v1</a></li>
-        
-            <li><a href="UUID.html#v3">UUID.v3</a></li>
-        
-            <li><a href="UUID.html#v5">UUID.v5</a></li>
-        </ul>
-    </dd>
     
 
     
@@ -1513,9 +1481,9 @@ console.log(UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</cod
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.v4());
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.v4());
 
-console.log(UUID.v4({
+console.log(Sumi.UUID.v4({
     random: [
         0x10, 0x91, 0x56, 0xbe, 0xc4, 0xfb, 0xc1, 0xea,
         0x71, 0xb4, 0xef, 0xe1, 0x67, 0x1c, 0x58, 0x36
@@ -1653,7 +1621,7 @@ console.log(UUID.v4(null, new Array(32), 0));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line248">line 248</a>
+        <a href="hash_uuid_uuid.js.html">hash/uuid/uuid.js</a>, <a href="hash_uuid_uuid.js.html#line246">line 246</a>
     </li></ul></dd>
     
 
@@ -1663,15 +1631,7 @@ console.log(UUID.v4(null, new Array(32), 0));</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>external:Math.guid</li>
-        
-            <li>Crypto.sha1</li>
-        
-            <li><a href="UUID.html#v1">UUID.v1</a></li>
-        
-            <li><a href="UUID.html#v3">UUID.v3</a></li>
-        
-            <li><a href="UUID.html#v4">UUID.v4</a></li>
+            <li><a href="Sumi.Crypto.html#sha1">Sumi.Crypto.sha1</a></li>
         </ul>
     </dd>
     
@@ -1713,8 +1673,8 @@ console.log(UUID.v4(null, new Array(32), 0));</code></pre>
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(UUID.v5('00000000-0000-0000-0000-000000000000', 'google');
-console.log(UUID.v5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
+    <pre class="prettyprint"><code>console.log(Sumi.UUID.v5('00000000-0000-0000-0000-000000000000', 'google');
+console.log(Sumi.UUID.v5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</code></pre>
 
     
 </dd>
@@ -1735,13 +1695,13 @@ console.log(UUID.v5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));</cod
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Core.html">Core</a></li><li><a href="Sumi.Crypto.html">Crypto</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="UUID.html">UUID</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Core.html">Core</a></li><li><a href="Sumi.Crypto.html">Crypto</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 10 2015 11:18:30 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 10 2015 11:41:42 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>

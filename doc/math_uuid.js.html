@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: core/zip.js</title>
+    <title>JSDoc: Source: math/uuid.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: core/zip.js</h1>
+    <h1 class="page-title">Source: math/uuid.js</h1>
 
     
 
@@ -29,32 +29,53 @@
             <pre class="prettyprint source linenums"><code>
 define(function () {'use strict';
 
-return function (x, y) {
-	x = Object(x);
-	var o = {},
-		i = x.length >>> 0;
-	for(y = y === undefined ? 0 : Object(y); i--;) {
-		o[x[i]] = y ? y[i] : 1; 
-	}
-	return o;
-};
+var c = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(''),
+	f = Math.random;
 	
-});
+return function (e, a) {
+	var l = e || 36,
+		u = new Array(l), 
+		x = a || c.length,
+		d = 0,
+		i,
+		r;
+	if (e) {
+		for (i = 0; i &lt; l; i++) u[i] = c[0 | f() * x];
+	}
+	else {
+		for (i = 0; i &lt; l; i++) {
+			if (i == 14) {
+				u[i] = '4';
+			}
+			else if (i == 8 || i == 13 || i == 18 || i == 23) {
+				u[i] = '-';
+			} 
+			else {
+				if (d &lt;= 0x02) d = 0x2000000 + (f() * 0x1000000) | 0;
+				r = d &amp; 0xf;
+				d = d >>  4;
+				u[i] = c[(i == 19) ? (r &amp; 0x3) | 0x8 : r];
+			}
+		}
+	}
+	return u.join('');
+};
+
+}); 
 
 /**
-* 基于分别指定的键数组和值数组合并创建对象。
-* @see {@link Sumi.Core.unzip}
+* 随机生成一个全局唯一标示符。如果无参数，则生成一个符合 RFC4122,v4 规则的 UUID(Universally Unique IDentifier)。
+* @see {@link Sumi.Math.rnd}
+* @see {@link Sumi.Array.rnd}
+* @see {@link Sumi.UUID}
 * @access public
-* @func Sumi.Core.zip
-* @param {array} arr1 - 键数组
-* @param {array} [arr2] - 值数组。如果没有提供，则所有键都会默认被赋值为 1 
-* @returns {object}
+* @func Sumi.Math.uuid
+* @param {number} [len=36] - 指定所生成的唯一标识符的长度
+* @param {number} [radix=0] - 每个字符允许的取值上限	
+* @returns {string}
 * @example
-* console.log(Sumi.Core.zip(['x', 'y', 'z']));
-* // { x: 1, y: 1, z: 1 }
-* 
-* console.log(Sumi.Core.zip(['x', 'y', 'z'], [1, 2, 3]));
-* // { x: 1, y: 2, z: 3 }
+* console.log(Sumi.Math.guid(8));
+* console.log(Sumi.Math.guid( ));
 */
 </code></pre>
         </article>
