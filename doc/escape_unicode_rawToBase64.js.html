@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: hash/uuid/v3.js</title>
+    <title>JSDoc: Source: escape/unicode/rawToBase64.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: hash/uuid/v3.js</h1>
+    <h1 class="page-title">Source: escape/unicode/rawToBase64.js</h1>
 
     
 
@@ -27,36 +27,40 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>
-define(
-[
-	'./util/hexdec',
-	'./util/substr',
-	'../crypto/md5'
-]
-, function (
-	hexdec, 
-	substr, 
-	md5
-) 
-{'use strict';
+define(function () {'use strict';
 
-return function (ns, name) {
-	return substr( md5(hexdec(ns) + name));
+var a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+return function (u, b) {
+	u = '' +  u;
+	b = b || '';
+	var l = u.length,
+		x = l * 8,
+		o = '',
+		i = 0,
+		j,
+		t;
+	for(; i &lt; l; i+= 3) {
+		t = (u.charCodeAt(i) &lt;&lt; 16) | (i + 1 &lt; l ? u.charCodeAt(i + 1) &lt;&lt; 8 : 0) | (i + 2 &lt; l ? u.charCodeAt(i + 2) : 0);
+		for(j = 0; j &lt; 4; j++) {
+			o+= i * 8 + j * 6 > x ? b : a.charAt((t >>> 6 * (3 - j)) &amp; 0x3F);
+		}
+	}
+	return o;
 };
 
 });
 
 /**
-* 使用 MD5 算法生成一个符合 RFC4122,v3 规则的 UUID(Universally Unique IDentifier)。
-* @see {@link Sumi.Crypto.md5}
+* 将原始字符串 (Raw String) 转换为 {@link http://zh.wikipedia.org/wiki/Base64 Base64} 编码字符串。
+* @see {@link Sumi.Escape.rawToHex}
 * @access public
-* @func Sumi.UUID.v3
-* @param {string} ns - 命名空间的 UUID
-* @param {string} name - 要编码的URL 或 DNS
+* @func Sumi.Escape.rawToBase64
+* @param {string} str - 原始字符串
+* @param {string} [b64pad=''] - 指定 base-64 编码格式填充字符。"=" 则严格遵守 RFC 文档。默认值为空
 * @returns {string}
 * @example
-* console.log(Sumi.UUID.v3('00000000-0000-0000-0000-000000000000', 'google'));
-* console.log(Sumi.UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));
+* console.log(Sumi.Escape.rawToBase64('google.com'));      // Z29vZ2xlLmNvbQ
 */
 </code></pre>
         </article>

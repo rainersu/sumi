@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: hash/uuid/v3.js</title>
+    <title>JSDoc: Source: escape/unicode/rawToHex.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: hash/uuid/v3.js</h1>
+    <h1 class="page-title">Source: escape/unicode/rawToHex.js</h1>
 
     
 
@@ -27,36 +27,36 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>
-define(
-[
-	'./util/hexdec',
-	'./util/substr',
-	'../crypto/md5'
-]
-, function (
-	hexdec, 
-	substr, 
-	md5
-) 
-{'use strict';
+define(function () {'use strict';
 
-return function (ns, name) {
-	return substr( md5(hexdec(ns) + name));
+return function (t, x) {
+	t = '' + t;
+	var l = t.length,
+		h = x ? "0123456789ABCDEF" : "0123456789abcdef",
+		o = "",
+		x,
+		i = 0;
+	for(; i &lt; l; i++) {
+		x = t.charCodeAt(i);
+		o+= h.charAt((x >>> 4) &amp; 0x0F) + h.charAt(x &amp; 0x0F);
+	}
+	return o;
 };
 
 });
 
 /**
-* 使用 MD5 算法生成一个符合 RFC4122,v3 规则的 UUID(Universally Unique IDentifier)。
-* @see {@link Sumi.Crypto.md5}
+* 将原始字符串 (Raw String) 转换为十六进制编码字符串。
+* @see {@link Sumi.Escape.rawToBase64}
 * @access public
-* @func Sumi.UUID.v3
-* @param {string} ns - 命名空间的 UUID
-* @param {string} name - 要编码的URL 或 DNS
+* @func Sumi.Escape.rawToHex
+* @param {string} str - 原始字符串
+* @param {boolean} [hexcase=false] - 指定十六进制编码字符格式
+* @param {boolean}  hexcase.true  - 使用大写字母
+* @param {boolean}  hexcase.false - 使用小写字母
 * @returns {string}
 * @example
-* console.log(Sumi.UUID.v3('00000000-0000-0000-0000-000000000000', 'google'));
-* console.log(Sumi.UUID.v3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'google.com'));
+* console.log(Sumi.Escape.rawToHex('google.com'));      // Z29vZ2xlLmNvbQ
 */
 </code></pre>
         </article>

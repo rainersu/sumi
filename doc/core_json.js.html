@@ -1,9 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/json.js</title>
 
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/json.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
 define(
 [
 	'../var/global',
 	'../var/hasOP',
-	'../core/type'
+	'./type'
 ]
 , function (
 	global, 
@@ -37,7 +65,7 @@ function str (key, holder) {
         mind = gap,
         partial,
         value = holder[key];
-    if (value && typeof value === 'object' && typeof value.toJSON === 'function') {
+    if (value &amp;&amp; typeof value === 'object' &amp;&amp; typeof value.toJSON === 'function') {
         value = value.toJSON(key);
     }
     if (typeof rep === 'function') {
@@ -59,7 +87,7 @@ function str (key, holder) {
         partial = [];
         if (Object.prototype.toString.apply(value) === '[object Array]') {
             length = value.length;
-            for (i = 0; i < length; i += 1) {
+            for (i = 0; i &lt; length; i += 1) {
                 partial[i] = str(i, value) || 'null';
             }
             v = partial.length === 0
@@ -70,9 +98,9 @@ function str (key, holder) {
             gap = mind;
             return v;
         }
-        if (rep && typeof rep === 'object') {
+        if (rep &amp;&amp; typeof rep === 'object') {
             length = rep.length;
-            for (i = 0; i < length; i += 1) {
+            for (i = 0; i &lt; length; i += 1) {
                 if (typeof rep[i] === 'string') {
                     k = rep[i];
                     v = str(k, value);
@@ -118,7 +146,7 @@ return global.JSON = {
     gap = '';
     indent = '';
     if (typeof space === 'number') {
-        for (i = 0; i < space; i += 1) {
+        for (i = 0; i &lt; space; i += 1) {
             indent += ' ';
         }
     } 
@@ -126,7 +154,7 @@ return global.JSON = {
         indent = space;
     }
     rep = replacer;
-    if (replacer && typeof replacer !== 'function' && (typeof replacer !== 'object' || typeof replacer.length !== 'number')) {
+    if (replacer &amp;&amp; typeof replacer !== 'function' &amp;&amp; (typeof replacer !== 'object' || typeof replacer.length !== 'number')) {
         throw new Error('JSON.stringify');
     }
     return str('', {'': value});
@@ -135,7 +163,7 @@ return global.JSON = {
 	    var j;
 	    function walk(holder, key) {
 	        var k, v, value = holder[key];
-	        if (value && typeof value === 'object') {
+	        if (value &amp;&amp; typeof value === 'object') {
 	            for (k in value) {
 	                if (hasOP.call(value, k)) {
 	                    v = walk(value, k);
@@ -179,7 +207,7 @@ return global.JSON = {
 */
 
 /**
-* ECMAScript 5.1 Standard <br>
+* ECMAScript 5.1 Standard &lt;br>
 * 将一个 JSON 字符串转换为一个 JavaScript 值。
 * @access public
 * @func external:JSON.parse
@@ -196,7 +224,7 @@ return global.JSON = {
 */
 	
 /**
-* ECMAScript 5.1 Standard <br>
+* ECMAScript 5.1 Standard &lt;br>
 * 将一个 JavaScript 对象字符串化为 JSON 字符串。
 * @see {@link external:Date#toJSON}
 * @see {@link external:Number#toJSON}
@@ -231,3 +259,26 @@ return global.JSON = {
 * 
 * console.log(m === s);      // true
 */
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Core.html">Core</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 10 2015 16:02:50 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
