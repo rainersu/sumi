@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line74">line 74</a>
+        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -109,9 +109,6 @@
             <dd></dd>
         
             <dt><a href="Sumi.Boolean.html">Boolean</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Sumi.Core.html">Core</a></dt>
             <dd></dd>
         
             <dt><a href="Sumi.Date.html">Date</a></dt>
@@ -299,6 +296,2943 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    
+        <h4 class="name" id="arr"><span class="type-signature">(static) </span>arr<span class="signature">(val)</span><span class="type-signature"> &rarr; {array}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        检测参数值是否是数组，并尽量确保最终返回一个数组。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">如果是一个数组，则直接返回。否则将视为类数组对象尝试转换为一个新数组</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_arr.js.html">core/arr.js</a>, <a href="core_arr.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#func">Sumi.func</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.arr());           // []
+console.log(Sumi.arr('a'));        // [ 'a' ]
+console.log(Sumi.arr('abc'));      // [ 'a', 'b', 'c' ]
+console.log(Sumi.arr('a', 'b'));   // [ 'a', 'b' ]
+console.log(Sumi.arr([ 1 ]));      // [ 1 ]
+console.log(Sumi.arr({ x: 1 }));   // []
+console.log(Sumi.arr(null));       // []
+console.log(Sumi.arr(1));          // []
+console.log(Sumi.arr(1, 2));       // [ 1, 2 ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="clone"><span class="type-signature">(static) </span>clone<span class="signature">(src, deep<span class="signature-attributes">opt</span>, deep=false)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        克隆指定的对象或其它数据类型。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">克隆源</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">执行深复制：递归遍历所有层级的字段并克隆出副本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deep=false</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">执行浅复制：只遍历第一子层级且不对引用类型做克隆处理</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_clone.js.html">core/clone.js</a>, <a href="core_clone.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#mixin">Sumi.mixin</a></li>
+        
+            <li><a href="Sumi.html#cp">Sumi.cp</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>var x = function () { return 3; };
+var y = Sumi.clone(x);
+console.log(x == y);                        // false
+console.log(x() == y());                    // true</code></pre>
+
+    <pre class="prettyprint"><code>var x = /^\s+$/ig;
+var y = Sumi.clone(x);
+console.log(x == y);                        // false
+console.log(x.pattern == y.pattern);        // true</code></pre>
+
+    <pre class="prettyprint"><code>var x = 'abc';
+var y = Sumi.clone(x);
+console.log(x == y);                        // true
+console.log(x === y);                       // true</code></pre>
+
+    <pre class="prettyprint"><code>var x = new String('abc');
+var y = Sumi.clone(x);
+console.log(x == y);                        // false
+console.log(x + '' === y + '');             // true</code></pre>
+
+    <pre class="prettyprint"><code>var x = [ 1, 2, 3 ];
+var y = Sumi.clone(x);
+console.log(x == y);                        // false
+console.log(x.toString() == y.toString());  // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="cp"><span class="type-signature">(static) </span>cp<span class="signature">(dst, src, override<span class="signature-attributes">opt</span>, deep<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将字段从一个对象复制给另一个对象。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dst</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">目标对象</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">源对象</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>override</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">是否覆盖同名字段
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">覆盖已有同名字段</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>false</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">跳过已有同名字段</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">深复制：将所有字段递归复制至非对象和数组类型</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>false</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">浅复制：对于对象和数组类型字段只传递引用关系</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_cp.js.html">core/cp.js</a>, <a href="core_cp.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#mixin">Sumi.mixin</a></li>
+        
+            <li><a href="Sumi.html#clone">Sumi.clone</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    目标对象
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.cp(0, .3));      // {}
+console.log(Sumi.cp(0, 'abc'));   // { '0': 'a', '1': 'b', '2': 'c' }
+
+console.log(Sumi.cp({ a: '0' }, { a: 0.1, b: [1, 2, 3], c: '1' }));
+// { a: '0', b: [ 1, 2, 3 ], c: '1' }
+
+console.log(Sumi.cp({ a: '0' }, { a: 0.1, b: [1, 2, 3], c: '1' }, true));
+// { a: 0.1, b: [ 1, 2, 3 ], c: '1' }</code></pre>
+
+    <pre class="prettyprint"><code>var x = { a: 1 };
+var y = { a: 1, b: [1, 2]};
+Sumi.cp(x, y, true);
+console.log(x.b == y.b);               // true
+Sumi.cp(x, y, true, true);
+console.log(x.b == y.b);               // false</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="eq"><span class="type-signature">(static) </span>eq<span class="signature">(val1, val2, deep<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        比较两个值是否相等。本方法使用严格等于 （ === ) 比较。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">任意变量</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>val2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">任意变量</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">对引用类型进行深度递归值比较，判断它们是否一切相等</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>false</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">对简单类型和引用类型都只进行浅比较</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_eq.js.html">core/eq.js</a>, <a href="core_eq.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="external-Object.html#is">external:Object.is</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.eq(null));                        // false
+console.log(Sumi.eq(undefined));                   // true
+console.log(Sumi.eq(null, undefined));             // false
+console.log(Sumi.eq(NaN, 0 / 0));                  // true
+console.log(Sumi.eq(+0, -0));                      // true
+console.log(Sumi.eq(1 / 0, 2 / 0));                // true
+
+console.log(Sumi.eq([1, 2, 3], [1, 2, 3]));        // false
+console.log(Sumi.eq([1, 2, 3], [1, 2, 3], true));  // true
+console.log(Sumi.eq([1, 2, 3], [3, 2, 1]));        // false
+
+console.log(Sumi.eq({                              // true
+    a : .1,
+    b : [1, 2, 3],
+    c : '123'
+}, {
+    a : .1,
+    b : [1, 2, 3],
+    c : '123'
+}, true));</code></pre>
+
+    <pre class="prettyprint"><code>var x='abc';
+var y=new String('abc');
+console.log(Sumi.eq(x, y));                        // false
+console.log(Sumi.eq(x, y, true));                  // true
+x.z=1;
+y.z=1;
+console.log(Sumi.eq(x, y));                        // false
+console.log(Sumi.eq(x, y, true));                  // false</code></pre>
+
+    <pre class="prettyprint"><code>var x = /\d/ig;
+var y = new RegExp('\\d', 'ig');
+console.log(Sumi.eq(x, y));                        // false
+console.log(Sumi.eq(x, y, true));                  // true
+y.exec('12345678');
+console.log(Sumi.eq(x, y));                        // false
+console.log(Sumi.eq(x, y, true));                  // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="func"><span class="type-signature">(static) </span>func<span class="signature">(val)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        检测参数值是否是函数，并尽量确保最终返回一个函数。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">如果参数是一个函数，则直接返回。否则将尝试对传入参数调用函数构造函数</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_func.js.html">core/func.js</a>, <a href="core_func.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#arr">Sumi.arr</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var f = function(x) { return x + 1; };
+f = Sumi.func(f);
+console.log(f(1));          // 2
+
+var f = Sumi.func('return 2');
+console.log(f( ));          // 2
+
+var f = Sumi.func('x', 'return x + 1');
+console.log(f(1));          // 2
+
+console.log(Sumi.func( ).toString());
+// function () {}
+
+console.log(Sumi.func(8).toString());
+// function anonymous() { 8 }</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="klass"><span class="type-signature">(static) </span>klass<span class="signature">(parentClass<span class="signature-attributes">opt</span>, instanceMembers<span class="signature-attributes">opt</span>, staticMembers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {class}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        新建一个类，并为其批量添加静态字段和实例字段。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>parentClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">class</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <a href="Sumi.Class.html">Sumi.Class</a>
+                
+                </td>
+            
+
+            <td class="description last">父类</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>instanceMembers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">实例字段字典</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>staticMembers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">静态字段字典</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_klass.js.html">core/klass.js</a>, <a href="core_klass.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Class.html">Sumi.Class</a></li>
+        
+            <li><a href="external-Object.html#create">external:Object.create</a></li>
+        
+            <li><a href="http://ejohn.org/blog/simple-javascript-inheritance/">http://ejohn.org/blog/simple-javascript-inheritance/</a></li>
+        
+            <li><a href="http://www.crockford.com/javascript/inheritance.html">http://www.crockford.com/javascript/inheritance.html</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">class</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>var A = Sumi.klass({ i: 1 });
+var B = Sumi.klass({ i: 2 }, { i: 3 });
+var C = Sumi.klass(A, { i: 4 });
+var D = Sumi.klass(B, { i: 5 }, { i: 6 });
+var a=new A();
+var b=new B();
+var c=new C();
+var d=new D();
+console.log(A.i);    // undefined
+console.log(a.i);    // 1
+console.log(B.i);    // 3
+console.log(b.i);    // 2
+console.log(C.i);    // undefined
+console.log(c.i);    // 4
+console.log(D.i);    // 6
+console.log(d.i);    // 5</code></pre>
+
+    <pre class="prettyprint"><code>
+var X = Sumi.klass({
+   init : function (a, b) {
+       this.c = a + b;
+   }
+});
+var Y = Sumi.klass(X, {
+   init : function (b) {
+       this._super(30, b);
+   }
+});
+y = new Y(3);
+
+console.log(y.c);     // 33
+
+console.log(y instanceof X);                          // true
+console.log(Y instanceof X);                          // false
+console.log(Y.prototype instanceof X);                // true
+
+console.log(X.prototype.isPrototypeOf(y));            // true
+console.log(X.prototype.isPrototypeOf(Y));            // false
+console.log(X.prototype.isPrototypeOf(Y.prototype));  // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="log"><span class="type-signature">(static) </span>log<span class="signature">(&hellip;val)</span><span class="type-signature"></span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        根据当前环境尽可能实现 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console.log">console.log</a> 的功能。如果该方法不存在，则尝试用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.alert">window.alert</a> 替代。如果也不可用，则尝试用 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw">throw</a> 替代。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last">要即时输出的信息</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_log.js.html">core/log.js</a>, <a href="core_log.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>Sumi.log('\u0026', 0x26, { m: 1 }, [ 1, 2 ]);  // [ '&amp;', 38, { m: 1 }, [ 1, 2 ] ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="mixin"><span class="type-signature">(static) </span>mixin<span class="signature">(&hellip;src)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        从多个源对象混合复制字段，创建一个新对象。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>src</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last">复制源</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_mixin.js.html">core/mixin.js</a>, <a href="core_mixin.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#clone">Sumi.clone</a></li>
+        
+            <li><a href="Sumi.html#cp">Sumi.cp</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.mixin({ x: 1 }, { x: 2, y: 2 }, { x:3, y: 3, z: 3 }));
+// { x: 3, y: 3, z: 3 }
+console.log(Sumi.mixin({ x: 1 }, { x: 2, y: 2, z: 2 }, { x:3, y: 3 }));
+// { x: 3, y: 3, z: 2 }
+
+console.log(Sumi.mixin());               // {}
+console.log(Sumi.mixin(0, false, ''));   // {}
+
+console.log(Sumi.mixin(0, false, [ 1, 2 ], [ 2 ]));
+// { '0': 2, '1': 2 }
+console.log(Sumi.mixin(1, 'abc', true, [ 1, 2 ], [ 2 ]));
+// { '0': 2, '1': 2, '2': 'c' }</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="ns"><span class="type-signature">(static) </span>ns<span class="signature">(ns)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        根据指定的路径获取对命名空间的引用。路径中不存在的命名空间将被自动创建。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">符合 a.b.c 格式的命名空间完整路径</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_ns.js.html">core/ns.js</a>, <a href="core_ns.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    对最终命名空间的引用。如果发生错误则返回全局对象 global(window)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>Sumi.ns('window.a.z');
+console.log(global.a);          // { z: {} }
+
+Sumi.ns('global.b.z');
+console.log(global.b);          // { z: {} }
+
+Sumi.ns('c.z');
+console.log(global.c);          // { z: {} }
+
+Sumi.ns('v');
+console.log(global.v);          // {}</code></pre>
+
+    <pre class="prettyprint"><code>var A = Sumi.ns();
+console.log(A === global);      // true
+
+var A = Sumi.ns('Array');
+console.log(A === Array);       // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="type"><span class="type-signature">(static) </span>type<span class="signature">(val)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        获取指定变量的真实类型。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">待检测值</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_type.js.html">core/type.js</a>, <a href="core_type.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    类型名称
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.type());                    // undefined     
+console.log(Sumi.type(void 0));              // undefined
+console.log(Sumi.type(undefined));           // undefined
+
+console.log(Sumi.type(null));                // null
+console.log(Sumi.type(new TypeError()));     // error
+console.log(Sumi.type({}));                  // object
+console.log(Sumi.type(Math));                // object
+console.log(Sumi.type(new Object()));        // object
+
+console.log(Sumi.type(Number));              // function
+console.log(Sumi.type(new Function()));      // function
+console.log(Sumi.type(function(){}));        // function
+console.log(Sumi.type(Function.prototype));  // function
+
+console.log(Sumi.type([]));                  // array
+console.log(Sumi.type(new Array()));         // array
+
+console.log(Sumi.type(0));                   // number
+console.log(Sumi.type(.2));                  // number
+console.log(Sumi.type(NaN));                 // number
+console.log(Sumi.type(Infinity));            // number
+console.log(Sumi.type(Number('2.')));        // number
+console.log(Sumi.type(new Number('.2')));    // number
+
+console.log(Sumi.type(''));                  // string
+console.log(Sumi.type('' + {}));             // string
+console.log(Sumi.type(String([3])));         // string
+console.log(Sumi.type(new String(.3)));      // string
+
+console.log(Sumi.type(true));                // boolean
+console.log(Sumi.type(!!{}));                // boolean
+console.log(Sumi.type(Boolean()));           // boolean
+console.log(Sumi.type(new Boolean(3)));      // boolean</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="unzip"><span class="type-signature">(static) </span>unzip<span class="signature">(str, separatorList<span class="signature-attributes">opt</span>, toObject<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array|object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        从一个字符串以指定规则创建出一维或多维数组，或对象。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">源字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>separatorList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    ',='
+                
+                </td>
+            
+
+            <td class="description last">依次用于切割的单字符分隔符列表</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">如果为 true ，则创建出对象。否则将创建出一维或多维数组</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_unzip.js.html">core/unzip.js</a>, <a href="core_unzip.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#zip">Sumi.zip</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+|
+
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.unzip('a=b,c=d'));               // [ 'a=b', 'c=d' ]
+console.log(Sumi.unzip('a=b,c=d', ',='));         // [ [ 'a', 'b' ], [ 'c', 'd' ] ]
+console.log(Sumi.unzip('a=b,c=d', ',' , true));   // { 'a=b': 1, 'c=d': 1 }
+console.log(Sumi.unzip('a=b,c=d', ',=', true));   // { a: 'b', c: 'd' }</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="zip"><span class="type-signature">(static) </span>zip<span class="signature">(arr1, arr2<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        基于分别指定的键数组和值数组合并创建对象。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">键数组</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arr2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">值数组。如果没有提供，则所有键都会默认被赋值为 1</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_zip.js.html">core/zip.js</a>, <a href="core_zip.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#unzip">Sumi.unzip</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.zip(['x', 'y', 'z']));
+// { x: 1, y: 1, z: 1 }
+
+console.log(Sumi.zip(['x', 'y', 'z'], [1, 2, 3]));
+// { x: 1, y: 2, z: 3 }</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
 
     
 
@@ -313,13 +3247,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Core.html">Core</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 10 2015 17:59:04 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 11 2015 00:02:39 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>

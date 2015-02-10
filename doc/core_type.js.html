@@ -50,45 +50,45 @@ return function(v) {
 /** 
 * 获取指定变量的真实类型。
 * @access public
-* @func Sumi.Core.type
+* @func Sumi.type
 * @param {*} val - 待检测值
 * @returns {string} 类型名称
 * @example
-* console.log(Sumi.Core.type());                    // undefined     
-* console.log(Sumi.Core.type(void 0));              // undefined
-* console.log(Sumi.Core.type(undefined));           // undefined
+* console.log(Sumi.type());                    // undefined     
+* console.log(Sumi.type(void 0));              // undefined
+* console.log(Sumi.type(undefined));           // undefined
 * 
-* console.log(Sumi.Core.type(null));                // null
-* console.log(Sumi.Core.type(new TypeError()));     // error
+* console.log(Sumi.type(null));                // null
+* console.log(Sumi.type(new TypeError()));     // error
 
-* console.log(Sumi.Core.type({}));                  // object
-* console.log(Sumi.Core.type(Math));                // object
-* console.log(Sumi.Core.type(new Object()));        // object
+* console.log(Sumi.type({}));                  // object
+* console.log(Sumi.type(Math));                // object
+* console.log(Sumi.type(new Object()));        // object
 * 
-* console.log(Sumi.Core.type(Number));              // function
-* console.log(Sumi.Core.type(new Function()));      // function
-* console.log(Sumi.Core.type(function(){}));        // function
-* console.log(Sumi.Core.type(Function.prototype));  // function
+* console.log(Sumi.type(Number));              // function
+* console.log(Sumi.type(new Function()));      // function
+* console.log(Sumi.type(function(){}));        // function
+* console.log(Sumi.type(Function.prototype));  // function
 * 
-* console.log(Sumi.Core.type([]));                  // array
-* console.log(Sumi.Core.type(new Array()));         // array
+* console.log(Sumi.type([]));                  // array
+* console.log(Sumi.type(new Array()));         // array
 * 
-* console.log(Sumi.Core.type(0));                   // number
-* console.log(Sumi.Core.type(.2));                  // number
-* console.log(Sumi.Core.type(NaN));                 // number
-* console.log(Sumi.Core.type(Infinity));            // number
-* console.log(Sumi.Core.type(Number('2.')));        // number
-* console.log(Sumi.Core.type(new Number('.2')));    // number
+* console.log(Sumi.type(0));                   // number
+* console.log(Sumi.type(.2));                  // number
+* console.log(Sumi.type(NaN));                 // number
+* console.log(Sumi.type(Infinity));            // number
+* console.log(Sumi.type(Number('2.')));        // number
+* console.log(Sumi.type(new Number('.2')));    // number
 * 
-* console.log(Sumi.Core.type(''));                  // string
-* console.log(Sumi.Core.type('' + {}));             // string
-* console.log(Sumi.Core.type(String([3])));         // string
-* console.log(Sumi.Core.type(new String(.3)));      // string
+* console.log(Sumi.type(''));                  // string
+* console.log(Sumi.type('' + {}));             // string
+* console.log(Sumi.type(String([3])));         // string
+* console.log(Sumi.type(new String(.3)));      // string
 * 
-* console.log(Sumi.Core.type(true));                // boolean
-* console.log(Sumi.Core.type(!!{}));                // boolean
-* console.log(Sumi.Core.type(Boolean()));           // boolean
-* console.log(Sumi.Core.type(new Boolean(3)));      // boolean
+* console.log(Sumi.type(true));                // boolean
+* console.log(Sumi.type(!!{}));                // boolean
+* console.log(Sumi.type(Boolean()));           // boolean
+* console.log(Sumi.type(new Boolean(3)));      // boolean
 */
 </code></pre>
         </article>
@@ -100,13 +100,13 @@ return function(v) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Core.html">Core</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li><li><a href="Sumi.UUID.html">UUID</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 10 2015 17:59:03 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 11 2015 00:02:39 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
