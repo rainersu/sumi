@@ -72,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line40">line 40</a>
+        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -107,7 +107,7 @@
             
 <dt>
     
-        <h4 class="name" id="decodeNCE"><span class="type-signature">(static) </span>decodeNCE<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+        <h4 class="name" id="decodeBase64"><span class="type-signature">(static) </span>decodeBase64<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
     
@@ -116,7 +116,353 @@
 
     
     <div class="description">
-        解码字符串中的 HTML 命名实体（Named Character Entities）。
+        从<a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 格式的ASCII字符序列文本还原出字符串。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_base64.js.html">escape/base64.js</a>, <a href="escape_base64.js.html#line148">line 148</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#encodeBase64">Sumi.Escape.encodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#encodeBase64URI">Sumi.Escape.encodeBase64URI</a></li>
+        
+            <li><a href="Sumi.Escape.html#decodeBase64URI">Sumi.Escape.decodeBase64URI</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/Base64">http://zh.wikipedia.org/wiki/Base64</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeBase64('dankogai'));
+// ZGFua29nYWk=
+
+console.log(Sumi.Escape.decodeBase64('ZGFua29nYWk='));
+// dankogai</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="decodeBase64URI"><span class="type-signature">(static) </span>decodeBase64URI<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        从 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 格式的ASCII字符序列文本还原出统一资源标识符（<a href="http://zh.wikipedia.org/wiki/URI">Uniform Resource Identifier</a>) 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_base64.js.html">escape/base64.js</a>, <a href="escape_base64.js.html#line191">line 191</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#encodeBase64">Sumi.Escape.encodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#decodeBase64">Sumi.Escape.decodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#encodeBase64URI">Sumi.Escape.encodeBase64URI</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/Base64">http://zh.wikipedia.org/wiki/Base64</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeBase64('小飼弾'));   
+// 5bCP6aO85by+
+
+console.log(Sumi.Escape.decodeBase64('5bCP6aO85by+'));   
+// 小飼弾
+
+console.log(Sumi.Escape.encodeBase64URI('小飼弾'));
+// 5bCP6aO85by-
+
+console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
+// 小飼弾</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="decodeHTML"><span class="type-signature">(static) </span>decodeHTML<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        还原 HTML 中用命名实体（Named Character Entities）替代的特殊字符。
     </div>
     
 
@@ -206,7 +552,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_nce.js.html">escape/nce.js</a>, <a href="escape_nce.js.html#line47">line 47</a>
+        <a href="escape_html.js.html">escape/html.js</a>, <a href="escape_html.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -216,7 +562,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="Sumi.Escape.html#encodeNCE">Sumi.Escape.encodeNCE</a></li>
+            <li><a href="Sumi.Escape.html#encodeHTML">Sumi.Escape.encodeHTML</a></li>
         
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/unescape">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/unescape</a></li>
         
@@ -266,7 +612,7 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(Sumi.Escape.decodeNCE('&amp;lt;input&amp;nbsp;title=&amp;quot;Hi,&amp;nbsp;Girl&amp;quot;&amp;gt;'));  
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.decodeHTML('&amp;lt;input&amp;nbsp;title=&amp;quot;Hi,&amp;nbsp;Girl&amp;quot;&amp;gt;'));  
 // &lt;input title="Hi, Girl"></code></pre>
 
     
@@ -441,7 +787,7 @@
             
 <dt>
     
-        <h4 class="name" id="encodeNCE"><span class="type-signature">(static) </span>encodeNCE<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+        <h4 class="name" id="encodeBase64"><span class="type-signature">(static) </span>encodeBase64<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
     
@@ -450,7 +796,353 @@
 
     
     <div class="description">
-        编码字符串中的 HTML 命名实体（Named Character Entities）。
+        将字符串编译成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 格式的ASCII字符序列文本。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_base64.js.html">escape/base64.js</a>, <a href="escape_base64.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#decodeBase64">Sumi.Escape.decodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#encodeBase64URI">Sumi.Escape.encodeBase64URI</a></li>
+        
+            <li><a href="Sumi.Escape.html#decodeBase64URI">Sumi.Escape.decodeBase64URI</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/Base64">http://zh.wikipedia.org/wiki/Base64</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeBase64('foo © bar 𝌆 baz'));
+// Zm9vIMKpIGJhciDwnYyGIGJheg==
+
+console.log(Sumi.Escape.decodeBase64('Zm9vIMKpIGJhciDwnYyGIGJheg=='));
+// foo © bar 𝌆 baz</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="encodeBase64URI"><span class="type-signature">(static) </span>encodeBase64URI<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将统一资源标识符（<a href="http://zh.wikipedia.org/wiki/URI">Uniform Resource Identifier</a>) 编译成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 格式的ASCII字符序列文本。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_base64.js.html">escape/base64.js</a>, <a href="escape_base64.js.html#line166">line 166</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#encodeBase64">Sumi.Escape.encodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#decodeBase64">Sumi.Escape.decodeBase64</a></li>
+        
+            <li><a href="Sumi.Escape.html#decodeBase64URI">Sumi.Escape.decodeBase64URI</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/Base64">http://zh.wikipedia.org/wiki/Base64</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeBase64('小飼弾'));   
+// 5bCP6aO85by+
+
+console.log(Sumi.Escape.decodeBase64('5bCP6aO85by+'));   
+// 小飼弾
+
+console.log(Sumi.Escape.encodeBase64URI('小飼弾'));
+// 5bCP6aO85by-
+
+console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
+// 小飼弾</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="encodeHTML"><span class="type-signature">(static) </span>encodeHTML<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将 HTML 中的特殊字符使用命名实体（Named Character Entities）替代。
     </div>
     
 
@@ -540,7 +1232,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_nce.js.html">escape/nce.js</a>, <a href="escape_nce.js.html#line31">line 31</a>
+        <a href="escape_html.js.html">escape/html.js</a>, <a href="escape_html.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -550,7 +1242,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="Sumi.Escape.html#decodeNCE">Sumi.Escape.decodeNCE</a></li>
+            <li><a href="Sumi.Escape.html#decodeHTML">Sumi.Escape.decodeHTML</a></li>
         
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/unescape">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/unescape</a></li>
         
@@ -600,7 +1292,7 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeNCE('&lt;input title="Hi, Girl">'));  
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeHTML('&lt;input title="Hi, Girl">'));  
 // &amp;lt;input&amp;nbsp;title=&amp;quot;Hi,&amp;nbsp;Girl&amp;quot;&amp;gt;</code></pre>
 
     
@@ -874,7 +1566,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_latin1.js.html">escape/latin1.js</a>, <a href="escape_latin1.js.html#line42">line 42</a>
+        <a href="escape_escapeLatin1.js.html">escape/escapeLatin1.js</a>, <a href="escape_escapeLatin1.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -884,6 +1576,8 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.Escape.html#stripCombiningMarks">Sumi.Escape.stripCombiningMarks</a></li>
+        
             <li><a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_%2528Unicode_block%2529#Character_table">https://en.wikipedia.org/wiki/Latin-1_Supplement_%28Unicode_block%29#Character_table</a></li>
         </ul>
     </dd>
@@ -927,6 +1621,166 @@
         <h5>Example</h5>
         
     <pre class="prettyprint"><code>console.log(Sumi.Escape.escapeLatin1('déjà vu'));      // deja vu</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="stripCombiningMarks"><span class="type-signature">(static) </span>stripCombiningMarks<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        移除 Unicode 字符串中的组合用附加符号 (Unicode combining marks) 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_stripCombiningMarks.js.html">escape/stripCombiningMarks.js</a>, <a href="escape_stripCombiningMarks.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#escapeLatin1">Sumi.Escape.escapeLatin1</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.stripCombiningMarks('Z͑ͫ̓ͪ̂ͫ̽͏̴̙̤̞͉͚̯̞̠͍A̴̵̜̰͔ͫ͗͢L̠ͨͧͩ͘G̴̻͈͍͔̹̑͗̎̅͛́Ǫ̵̹̻̝̳͂̌̌͘!͖̬̰̙̗̿̋ͥͥ̂ͣ̐́́͜͞'));      // ZALGǪ!</code></pre>
 
     
 </dd>
@@ -1664,7 +2518,7 @@ console.log(Sumi.Escape.toTradHanzi(str));
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 11 2015 00:02:39 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 11 2015 12:53:24 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
