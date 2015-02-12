@@ -72,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_index.js.html">hash/index.js</a>, <a href="hash_index.js.html#line27">line 27</a>
+        <a href="hash_index.js.html">hash/index.js</a>, <a href="hash_index.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -116,7 +116,7 @@
 
     
     <div class="description">
-        应用 MD5 算法为字符串创建信息摘要。
+        应用 <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> 算法为字符串创建信息摘要。
     </div>
     
 
@@ -327,7 +327,7 @@
 
             
 
-            <td class="description last">生成 Base64 编码字符串</td>
+            <td class="description last">生成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 编码字符串</td>
         </tr>
 
     
@@ -443,13 +443,19 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>Sumi.Hash.rmd160</li>
+            <li><a href="Sumi.Hash.html#uuid3">Sumi.Hash.uuid3</a></li>
+        
+            <li><a href="Sumi.Hash.html#rmd160">Sumi.Hash.rmd160</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha1">Sumi.Hash.sha1</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha256">Sumi.Hash.sha256</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha512">Sumi.Hash.sha512</a></li>
         
             <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
         
-            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
-        
-            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
+            <li><a href="http://zh.wikipedia.org/wiki/MD5">http://zh.wikipedia.org/wiki/MD5</a></li>
         </ul>
     </dd>
     
@@ -504,6 +510,1567 @@ console.log(Sumi.Hash.md5('value', 'key') === '01433efd5f16327ea4b31144572c67f6'
             
 <dt>
     
+        <h4 class="name" id="rmd160"><span class="type-signature">(static) </span>rmd160<span class="signature">(str, key<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, encoding<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        应用 <a href="http://en.wikipedia.org/wiki/RIPEMD-160">RIPEMD-160</a> 算法为字符串创建信息摘要。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">输入文本</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">密钥</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成十六进制编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">启用 encoding 参数。自定义输出</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>encoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">如果指定了本参数则作为编码字符串使用。否则则直接返回原始字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_rmd160.js.html">hash/rmd160.js</a>, <a href="hash_rmd160.js.html#line150">line 150</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#md5">Sumi.Hash.md5</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha1">Sumi.Hash.sha1</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha256">Sumi.Hash.sha256</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha512">Sumi.Hash.sha512</a></li>
+        
+            <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
+        
+            <li><a href="http://en.wikipedia.org/wiki/RIPEMD-160">http://en.wikipedia.org/wiki/RIPEMD-160</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.rmd160("abc")        === '8eb208f7e05d987a9b044a8e98c6b087f15a0bfc');
+console.log(Sumi.Hash.rmd160('abc', 'key') === '67fdce738ebfc7372bcd38f03c023b5746724d18');</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="sha1"><span class="type-signature">(static) </span>sha1<span class="signature">(str, key<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        应用 <a href="http://en.wikipedia.org/wiki/SHA-1">SHA1</a> 算法为字符串创建信息摘要。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">输入文本</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">密钥</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成十六进制编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">返回原始字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_sha1.js.html">hash/sha1.js</a>, <a href="hash_sha1.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#uuid5">Sumi.Hash.uuid5</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha256">Sumi.Hash.sha256</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha512">Sumi.Hash.sha512</a></li>
+        
+            <li><a href="Sumi.Hash.html#md5">Sumi.Hash.md5</a></li>
+        
+            <li><a href="Sumi.Hash.html#rmd160">Sumi.Hash.rmd160</a></li>
+        
+            <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/SHA_%25E5%25AE%25B6%25E6%2597%258F">http://zh.wikipedia.org/wiki/SHA_%E5%AE%B6%E6%97%8F</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.sha1('abc')        === 'a9993e364706816aba3e25717850c26c9cd0d89d');
+console.log(Sumi.Hash.sha1('abc', 'key') === '4fd0b215276ef12f2b3e4c8ecac2811498b656fc');</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="sha256"><span class="type-signature">(static) </span>sha256<span class="signature">(str, key<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, encoding<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        应用 <a href="http://en.wikipedia.org/wiki/SHA-2">SHA256</a> 算法为字符串创建信息摘要。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">输入文本</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">密钥</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成十六进制编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">启用 encoding 参数。自定义输出</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>encoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">如果指定了本参数则作为编码字符串使用。否则则直接返回原始字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_sha256.js.html">hash/sha256.js</a>, <a href="hash_sha256.js.html#line183">line 183</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#sha1">Sumi.Hash.sha1</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha512">Sumi.Hash.sha512</a></li>
+        
+            <li><a href="Sumi.Hash.html#md5">Sumi.Hash.md5</a></li>
+        
+            <li><a href="Sumi.Hash.html#rmd160">Sumi.Hash.rmd160</a></li>
+        
+            <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/SHA_%25E5%25AE%25B6%25E6%2597%258F">http://zh.wikipedia.org/wiki/SHA_%E5%AE%B6%E6%97%8F</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.sha256("abc")); 
+// ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+
+console.log(Sumi.Hash.sha256('abc', 'key'));        
+// 9c196e32dc0175f86f4b1cb89289d6619de6bee699e4c378e68309ed97a1a6ab</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="sha512"><span class="type-signature">(static) </span>sha512<span class="signature">(str, key<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, encoding<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        应用 <a href="http://en.wikipedia.org/wiki/SHA-2">SHA512(SHA-2)</a> 算法为字符串创建信息摘要。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">输入文本</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">密钥</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成十六进制编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成 <a href="http://zh.wikipedia.org/wiki/Base64">Base64</a> 编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">启用 encoding 参数。自定义输出</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>encoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+
+            <td class="description last">如果指定了本参数则作为编码字符串使用。否则则直接返回原始字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_sha512.js.html">hash/sha512.js</a>, <a href="hash_sha512.js.html#line312">line 312</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#sha1">Sumi.Hash.sha1</a></li>
+        
+            <li><a href="Sumi.Hash.html#sha256">Sumi.Hash.sha256</a></li>
+        
+            <li><a href="Sumi.Hash.html#md5">Sumi.Hash.md5</a></li>
+        
+            <li><a href="Sumi.Hash.html#rmd160">Sumi.Hash.rmd160</a></li>
+        
+            <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
+        
+            <li><a href="http://zh.wikipedia.org/wiki/SHA_%25E5%25AE%25B6%25E6%2597%258F">http://zh.wikipedia.org/wiki/SHA_%E5%AE%B6%E6%97%8F</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.sha512("abc"));
+// ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f
+
+console.log(Sumi.Hash.sha512('abc', 'key'));
+// 3926a207c8c42b0c41792cbd3e1a1aaaf5f7a25704f62dfc939c4987dd7ce060009c5bb1c2447355b3216f10b537e9afa7b64a4e5391b0d631172d07939e087a </code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
         <h4 class="name" id="uuid1"><span class="type-signature">(static) </span>uuid1<span class="signature">(node<span class="signature-attributes">opt</span>, clockseq<span class="signature-attributes">opt</span>, msecs<span class="signature-attributes">opt</span>, nsecs<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
@@ -513,7 +2080,7 @@ console.log(Sumi.Hash.md5('value', 'key') === '01433efd5f16327ea4b31144572c67f6'
 
     
     <div class="description">
-        生成一个符合 RFC4122,v1 规则基于时间戳的 UUID(Universally Unique IDentifier)。
+        生成一个符合 <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122,v1</a> 规则基于时间戳的 <a href="http://zh.wikipedia.org/wiki/UUID">UUID(Universally Unique IDentifier)</a> 。
     </div>
     
 
@@ -727,11 +2294,11 @@ console.log(Sumi.Hash.md5('value', 'key') === '01433efd5f16327ea4b31144572c67f6'
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.Hash.html#uuid3">Sumi.Hash.uuid3</a></li>
+        
             <li><a href="Sumi.Hash.html#uuid4">Sumi.Hash.uuid4</a></li>
         
-            <li><a href="https://github.com/LiosK/UUID.js">https://github.com/LiosK/UUID.js</a></li>
-        
-            <li><a href="http://github.com/broofa/node-UUID">http://github.com/broofa/node-UUID</a></li>
+            <li><a href="Sumi.Hash.html#uuid5">Sumi.Hash.uuid5</a></li>
         
             <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
         
@@ -785,8 +2352,344 @@ console.log(Sumi.Hash.uuid1(
     0x1234,
     new Date('2011-11-01').getTime(),
     5678
-));
-// 710b962e-041c-11e1-9234-0123456789ab</code></pre>
+) === '710b962e-041c-11e1-9234-0123456789ab');</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="uuid3"><span class="type-signature">(static) </span>uuid3<span class="signature">(ns, data)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        使用 <a href="http://en.wikipedia.org/wiki/MD5">MD5</a> 算法生成一个符合 <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122,v1</a> 规则基于时间戳的 <a href="http://zh.wikipedia.org/wiki/UUID">UUID(Universally Unique IDentifier)</a> 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">命名空间的 UUID
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nil</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">00000000-0000-0000-0000-000000000000</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:DNS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b810-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:URL</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b811-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:OID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b812-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:X500</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b814-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要编码的 URL 或其它文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_uuid3.js.html">hash/uuid3.js</a>, <a href="hash_uuid3.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#md5">Sumi.Hash.md5</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid1">Sumi.Hash.uuid1</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid4">Sumi.Hash.uuid4</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid5">Sumi.Hash.uuid5</a></li>
+        
+            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
+        
+            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.uuid3('ns:DNS', 'php.net')); 
+// 11a38b9a-b3da-360f-9353-a5a725514269
+
+console.log(Sumi.Hash.uuid3('ns:DNS', 'php.net') === '11a38b9a-b3da-360f-9353-a5a725514269');
+// true</code></pre>
 
     
 </dd>
@@ -804,7 +2707,7 @@ console.log(Sumi.Hash.uuid1(
 
     
     <div class="description">
-        生成一个符合 RFC4122,v4 规则的 UUID(Universally Unique IDentifier)。
+        生成一个符合 <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122,v1</a> 规则基于时间戳的 <a href="http://zh.wikipedia.org/wiki/UUID">UUID(Universally Unique IDentifier)</a> 。
     </div>
     
 
@@ -949,11 +2852,11 @@ console.log(Sumi.Hash.uuid1(
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.Hash.html#uuid3">Sumi.Hash.uuid3</a></li>
+        
             <li><a href="Sumi.Hash.html#uuid1">Sumi.Hash.uuid1</a></li>
         
-            <li><a href="https://github.com/LiosK/UUID.js">https://github.com/LiosK/UUID.js</a></li>
-        
-            <li><a href="http://github.com/broofa/node-UUID">http://github.com/broofa/node-UUID</a></li>
+            <li><a href="Sumi.Hash.html#uuid5">Sumi.Hash.uuid5</a></li>
         
             <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
         
@@ -1005,8 +2908,345 @@ console.log(Sumi.Hash.uuid1(
 console.log(Sumi.Hash.uuid4([
     0x10, 0x91, 0x56, 0xbe, 0xc4, 0xfb, 0xc1, 0xea,
     0x71, 0xb4, 0xef, 0xe1, 0x67, 0x1c, 0x58, 0x36
-]));
-// 109156be-c4fb-41ea-b1b4-efe1671c5836</code></pre>
+]) === '109156be-c4fb-41ea-b1b4-efe1671c5836');
+// true </code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="uuid5"><span class="type-signature">(static) </span>uuid5<span class="signature">(ns, data)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        使用 <a href="http://en.wikipedia.org/wiki/SHA-1">SHA1</a> 算法生成一个符合 <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC4122,v1</a> 规则基于时间戳的 <a href="http://zh.wikipedia.org/wiki/UUID">UUID(Universally Unique IDentifier)</a> 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">命名空间的 UUID
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nil</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">00000000-0000-0000-0000-000000000000</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:DNS</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b810-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:URL</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b811-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:OID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b812-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns:X500</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">6ba7b814-9dad-11d1-80b4-00c04fd430c8</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要编码的 URL 或其它文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="hash_uuid5.js.html">hash/uuid5.js</a>, <a href="hash_uuid5.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Hash.html#sha1">Sumi.Hash.sha1</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid1">Sumi.Hash.uuid1</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid4">Sumi.Hash.uuid4</a></li>
+        
+            <li><a href="Sumi.Hash.html#uuid3">Sumi.Hash.uuid3</a></li>
+        
+            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
+        
+            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Hash.uuid5('ns:DNS', 'php.net'));
+// c4a760a8-dbcf-5254-a0d9-6a4474bd1b62
+
+console.log(Sumi.Hash.uuid5('ns:DNS', 'php.net') === 'c4a760a8-dbcf-5254-a0d9-6a4474bd1b62');
+// true</code></pre>
 
     
 </dd>
@@ -1033,7 +3273,7 @@ console.log(Sumi.Hash.uuid4([
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Feb 12 2015 14:03:53 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Feb 12 2015 16:35:10 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
