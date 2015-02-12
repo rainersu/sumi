@@ -72,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="hash_index.js.html">hash/index.js</a>, <a href="hash_index.js.html#line24">line 24</a>
+        <a href="hash_index.js.html">hash/index.js</a>, <a href="hash_index.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -107,7 +107,7 @@
             
 <dt>
     
-        <h4 class="name" id="md5"><span class="type-signature">(static) </span>md5<span class="signature">(str, key<span class="signature-attributes">opt</span>, type＝0<span class="signature-attributes">opt</span>, encoding<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+        <h4 class="name" id="md5"><span class="type-signature">(static) </span>md5<span class="signature">(str, key<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, encoding<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
     
@@ -144,6 +144,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -176,6 +178,10 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">输入文本</td>
@@ -210,6 +216,12 @@
             
 
             
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
 
             <td class="description last">密钥</td>
         </tr>
@@ -218,7 +230,7 @@
 
         <tr>
             
-                <td class="name"><code>type＝0</code></td>
+                <td class="name"><code>type</code></td>
             
 
             <td class="type">
@@ -243,8 +255,108 @@
             
 
             
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
 
-            <td class="description last">正数则启用 encoding 参数。负数则生成 Base64 编码字符串。默认生成十六进制编码字符串</td>
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成十六进制编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">生成 Base64 编码字符串</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">启用 encoding 参数。自定义输出</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
         </tr>
 
     
@@ -275,6 +387,12 @@
                 </td>
             
 
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
             
 
             <td class="description last">如果指定了本参数则作为编码字符串使用。否则则直接返回原始字符串</td>
@@ -328,6 +446,10 @@
             <li>Sumi.Hash.rmd160</li>
         
             <li><a href="http://pajhome.org.uk/crypt/">http://pajhome.org.uk/crypt/</a></li>
+        
+            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
+        
+            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
         </ul>
     </dd>
     
@@ -610,6 +732,10 @@ console.log(Sumi.Hash.md5('value', 'key') === '01433efd5f16327ea4b31144572c67f6'
             <li><a href="https://github.com/LiosK/UUID.js">https://github.com/LiosK/UUID.js</a></li>
         
             <li><a href="http://github.com/broofa/node-UUID">http://github.com/broofa/node-UUID</a></li>
+        
+            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
+        
+            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
         </ul>
     </dd>
     
@@ -669,7 +795,7 @@ console.log(Sumi.Hash.uuid1(
             
 <dt>
     
-        <h4 class="name" id="uuid4"><span class="type-signature">(static) </span>uuid4<span class="signature">(options<span class="signature-attributes">opt</span>, random)</span><span class="type-signature"> &rarr; {string}</span></h4>
+        <h4 class="name" id="uuid4"><span class="type-signature">(static) </span>uuid4<span class="signature">(random<span class="signature-attributes">opt</span>, rng<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
     
@@ -716,13 +842,13 @@ console.log(Sumi.Hash.uuid1(
 
         <tr>
             
-                <td class="name"><code>options</code></td>
+                <td class="name"><code>random</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">number</span>
 
 
             
@@ -742,37 +868,6 @@ console.log(Sumi.Hash.uuid1(
 
             
 
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>random</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
             <td class="description last">包含十六个十六进制数字的数组，用于放置生成结果</td>
         </tr>
 
@@ -780,7 +875,7 @@ console.log(Sumi.Hash.uuid1(
 
         <tr>
             
-                <td class="name"><code>options.rng</code></td>
+                <td class="name"><code>rng</code></td>
             
 
             <td class="type">
@@ -794,6 +889,8 @@ console.log(Sumi.Hash.uuid1(
 
             
                 <td class="attributes">
+                
+                    &lt;optional><br>
                 
 
                 
@@ -857,6 +954,10 @@ console.log(Sumi.Hash.uuid1(
             <li><a href="https://github.com/LiosK/UUID.js">https://github.com/LiosK/UUID.js</a></li>
         
             <li><a href="http://github.com/broofa/node-UUID">http://github.com/broofa/node-UUID</a></li>
+        
+            <li><a href="https://github.com/rse/pure-uuid">https://github.com/rse/pure-uuid</a></li>
+        
+            <li><a href="https://github.com/broofa/node-uuid">https://github.com/broofa/node-uuid</a></li>
         </ul>
     </dd>
     
@@ -932,7 +1033,7 @@ console.log(Sumi.Hash.uuid4([
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 11 2015 23:12:17 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Feb 12 2015 14:03:53 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
