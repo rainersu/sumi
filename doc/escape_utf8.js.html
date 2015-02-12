@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: escape/utf8.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: escape/utf8.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+define(
+[
+	'../var/fromCC'
+]
+, function (
+	fromCC
+) 
+{'use strict';
+
+var A,
+	C,
+	X;
+
+function decodeSymbol() {
+	var u,
+		v,
+		x,
+		y,
+		o;
+	if (X > C) {
+		throw Error('Invalid byte index');
+	}
+	if (X == C) {
+		return false;
+	}
+	u = A[X] &amp; 0xFF;
+	X++;
+	if ((u &amp; 0x80) == 0) {
+		return u;
+	}
+	if ((u &amp; 0xE0) == 0xC0) {
+		v = readContinuationByte();
+		o = ((u &amp; 0x1F) &lt;&lt; 6) | v;
+		if (o >= 0x80) {
+			return o;
+		} else {
+			throw Error('Invalid continuation byte');
+		}
+	}
+	if ((u &amp; 0xF0) == 0xE0) {
+		v = readContinuationByte();
+		x = readContinuationByte();
+		o = ((u &amp; 0x0F) &lt;&lt; 12) | (v &lt;&lt; 6) | x;
+		if (o >= 0x0800) {
+			checkScalarValue(o);
+			return o;
+		} 
+		else {
+			throw Error('Invalid continuation byte');
+		}
+	}
+	if ((u &amp; 0xF8) == 0xF0) {
+		v = readContinuationByte();
+		x = readContinuationByte();
+		y = readContinuationByte();
+		o = ((u &amp; 0x0F) &lt;&lt; 0x12) | (v &lt;&lt; 0x0C) | (x &lt;&lt; 0x06) | y;
+		if (o >= 0x010000 &amp;&amp; o &lt;= 0x10FFFF) {
+			return o;
+		}
+	}
+	throw Error('Invalid UTF-8 detected');
+}
+
+function readContinuationByte () {
+	if (X >= C) {
+		throw Error('Invalid byte index');
+	}
+	var b = A[X] &amp; 0xFF;
+	X++;
+	if ((b &amp; 0xC0) == 0x80) {
+		return b &amp; 0x3F;
+	}
+	throw Error('Invalid continuation byte');
+}
+
+function createByte (c, f) {
+	return fromCC(((c >> f) &amp; 0x3F) | 0x80);
+}
+
+function checkScalarValue (c) {
+	if (c >= 0xD800 &amp;&amp; c &lt;= 0xDFFF) {
+		throw Error('Lone surrogate U+' + c.toString(16).toUpperCase() + ' is not a scalar value');
+	}
+}
+
+function encodeCodePoint (c) {
+	if ((c &amp; 0xFFFFFF80) == 0) {
+		return fromCC(c);
+	}
+	var y = '';
+	if ((c &amp; 0xFFFFF800) == 0) {
+		y = fromCC(((c >>  6) &amp; 0x1F) | 0xC0);
+	}
+	else if ((c &amp; 0xFFFF0000) == 0) {
+		checkScalarValue(c);
+		y = fromCC(((c >> 12) &amp; 0x0F) | 0xE0);
+		y+= createByte(c,  6);
+	}
+	else if ((c &amp; 0xFFE00000) == 0) {
+		y = fromCC(((c >> 18) &amp; 0x07) | 0xF0);
+		y+= createByte(c, 12);
+		y+= createByte(c,  6);
+	}
+	y+= fromCC((c &amp; 0x3F) | 0x80);
+	return y;
+}
+
+function ucs2decode (s) {
+	var r = [],
+		i = 0,
+		l = s.length,
+		v,
+		e;
+	while (i &lt; l) {
+		v = s.charCodeAt(i++);
+		if (v >= 0xD800 &amp;&amp; v &lt;= 0xDBFF &amp;&amp; i &lt; l) {
+			e = s.charCodeAt(i++);
+			if ((e &amp; 0xFC00) == 0xDC00) {
+				r.push(((v &amp; 0x3FF) &lt;&lt; 10) + (e &amp; 0x3FF) + 0x10000);
+			} 
+			else {
+				r.push(v);
+				i--;
+			}
+		} 
+		else {
+			r.push(v);
+		}
+	}
+	return r;
+}
+
+function ucs2encode (a) {
+	var l = a.length,
+		i = -1,
+		v,
+		r = '';
+	while (++i &lt; l) {
+		v = a[i];
+		if (v > 0xFFFF) {
+			v-= 0x10000;
+			r+= fromCC(v >>> 10 &amp; 0x3FF | 0xD800);
+			v = 0xDC00 | v &amp; 0x3FF;
+		}
+		r+= fromCC(v);
+	}
+	return r;
+}
+
+return  {
+	encode : function (s) {
+		var c = ucs2decode(s),
+			l = c.length,
+			i = -1,
+			b = '';
+		while (++i &lt; l) {
+			b += encodeCodePoint(c[i]);
+		}
+		return b;
+	},
+	decode : function (s) {
+		A = ucs2decode(s);
+		C = A.length;
+		X = 0;
+		var a = [],
+			t;
+		while ((t = decodeSymbol()) !== false) {
+			a.push(t);
+		}
+		return ucs2encode(a);
+	}
+};
+
+});
+
+/**
+* 将 {@link http://zh.wikibooks.org/wiki/Unicode Unicode} 字符串编译成 {@link http://en.wikipedia.org/wiki/UTF-8 UTF-8} 格式。
+* @see {@link Sumi.Escape.decodeUTF8}
+* @access public
+* @func Sumi.Escape.encodeUTF8
+* @param {string} str - 要处理的字符串
+* @returns {string}
+* @example
+* console.log(Sumi.Escape.encodeUTF8('\xA9') === '\xC2\xA9');
+* console.log(Sumi.Escape.encodeUTF8('\uD800\uDC01') === '\xF0\x90\x80\x81');
+*/
+
+/**
+* 从 {@link http://en.wikipedia.org/wiki/UTF-8 UTF-8} 格式解码出 {@link http://zh.wikibooks.org/wiki/Unicode Unicode} 字符串。
+* @see {@link Sumi.Escape.encodeUTF8}
+* @access public
+* @func Sumi.Escape.decodeUTF8
+* @param {string} str - 要处理的字符串
+* @returns {string}
+* @example
+* console.log(Sumi.Escape.decodeUTF8('\xC2\xA9') === '\xA9');
+* console.log(Sumi.Escape.decodeUTF8('\xF0\x90\x80\x81') === '\uD800\uDC01');
+*/
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Fri Feb 13 2015 01:42:01 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

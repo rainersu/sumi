@@ -72,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line51">line 51</a>
+        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -787,6 +787,167 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
             
 <dt>
     
+        <h4 class="name" id="decodeUTF8"><span class="type-signature">(static) </span>decodeUTF8<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        从 <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> 格式解码出 <a href="http://zh.wikibooks.org/wiki/Unicode">Unicode</a> 字符串。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_utf8.js.html">escape/utf8.js</a>, <a href="escape_utf8.js.html#line189">line 189</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#encodeUTF8">Sumi.Escape.encodeUTF8</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.decodeUTF8('\xC2\xA9') === '\xA9');
+console.log(Sumi.Escape.decodeUTF8('\xF0\x90\x80\x81') === '\uD800\uDC01');</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
         <h4 class="name" id="encodeBase64"><span class="type-signature">(static) </span>encodeBase64<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
@@ -1459,6 +1620,167 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
         
     <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeRegExp('[lodash](https://lodash.com/)'));
 // \[lodash\]\(https:\/\/lodash\.com\/\)</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="encodeUTF8"><span class="type-signature">(static) </span>encodeUTF8<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将 <a href="http://zh.wikibooks.org/wiki/Unicode">Unicode</a> 字符串编译成 <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> 格式。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">要处理的字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_utf8.js.html">escape/utf8.js</a>, <a href="escape_utf8.js.html#line177">line 177</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#decodeUTF8">Sumi.Escape.decodeUTF8</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.encodeUTF8('\xA9') === '\xC2\xA9');
+console.log(Sumi.Escape.encodeUTF8('\uD800\uDC01') === '\xF0\x90\x80\x81');</code></pre>
 
     
 </dd>
@@ -3240,7 +3562,7 @@ console.log(Sumi.Escape.toTradHanzi(str));
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Feb 12 2015 16:35:10 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Fri Feb 13 2015 01:42:02 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
