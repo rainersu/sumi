@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Pattern</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Namespace: Pattern</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="Sumi.html">Sumi</a>.</span>
+        
+        Pattern
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">正则表达式模板集合。</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line126">line 126</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Match.html">Sumi.Match</a></li>
+        
+            <li><a href="Sumi.RegExp.html">Sumi.RegExp</a></li>
+        
+            <li><a href="external-RegExp.html">external:RegExp</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a></li>
+        
+            <li><a href="https://msdn.microsoft.com/en-us/library/ie/9dthzd08(v=vs.94).aspx">https://msdn.microsoft.com/en-us/library/ie/9dthzd08(v=vs.94).aspx</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="CN_ID"><span class="type-signature">(static) </span>CN_ID<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理中国大陆身份证号码的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.CN_ID;
+
+console.log(match.parse('44011119800315281X'));
+// [ { 
+//     code: 'X',
+//     sex: '1',
+//     serial: '281',
+//     day: '15',
+//     month: '03',
+//     year: '1980',
+//     district: '11',
+//     city: '01',
+//     province: '44',
+//     match: '44011119800315281X' 
+// } ]
+
+console.log(match.parse('440111198003152813', true, function (o) {
+    return {
+        sex: +o.sex % 2 ? 'male' : 'female',
+        birthday: new Date(+o.year, +o.month - 1, +o.day).toLocaleDateString()
+    }
+})); 
+// [ {
+//     sex: 'male', 
+//     birthday: 'Saturday, March 15, 1980'
+// } ]
+
+console.log(match.is('44011119800315281Z'));   // false</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="CN_MOBILE_PHONE"><span class="type-signature">(static) </span>CN_MOBILE_PHONE<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理中国大陆地区手机号码的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.CN_MOBILE_PHONE;
+
+console.log(match.parse('MOBILE: (+86)189-1235-1181, 189-1235-1181'));
+// [ { 
+//     serial: '1181',
+//     zone: '1235',
+//     carrier: '189',
+//     match: '(+86)189-1235-1181' 
+// },{ 
+//     serial: '1181',
+//     zone: '1235',
+//     carrier: '189',
+//     match: '189-1235-1181' 
+// } ]
+
+console.log(match.is('+86 18912351181'));      // true
+console.log(match.is('(86) 189 1235 1181'));   // true
+console.log(match.is('(+86)189-1235-1181'));   // true
+console.log(match.is('18912351181'));          // true
+console.log(match.is('189 1235 1181'));        // true
+console.log(match.is('189-1235-1181'));        // true
+
+console.log(match.is('28912351181'));          // false
+console.log(match.is('1891235118'));           // false</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="CN_TELEPHONE"><span class="type-signature">(static) </span>CN_TELEPHONE<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理中国大陆地区固话号码的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line176">line 176</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.CN_TELEPHONE;
+
+console.log(match.parse('TEL: (+86)21 5568-3122, (86-21) 55683122'));
+// [ {
+//     number: '55683122', 
+//     zone: '21', 
+//     match: '(+86)21 5568-3122'
+// },{	
+//     number: '55683122', 
+//     zone: '21', 
+//     match: '(86-21) 55683122' 
+// } ]
+
+console.log(match.is('+86 21 55683122'));     // true
+console.log(match.is('(+86)21 5568-3122'));   // true
+console.log(match.is('(86-21) 55683122'));    // true
+console.log(match.is('(021)55683122'));       // true
+console.log(match.is('021 55683122'));        // true
+
+console.log(match.is('(+98)21 5568-3122'));   // false
+console.log(match.is('021 556831'));          // false</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="EMAIL"><span class="type-signature">(static) </span>EMAIL<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理 <a href="http://en.wikipedia.org/wiki/Email_address">邮件地址</a> 的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.EMAIL;
+
+console.log(match.parse('admin@me.com'));
+// [ { domain: 'me.com', user: 'admin', match: 'admin@me.com' } ]
+
+console.log(match.match('他俩的邮件地址是candy@me.com和frank@live.com'));
+// [ 'candy@me.com', 'frank@live.com' ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="TIME"><span class="type-signature">(static) </span>TIME<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理时间格式的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.TIME;
+
+console.log(match.parse('9:15 A.M. or 10pm or 13:30:55'));
+// [  
+//     { hour:  9, minute: 15, second:  0 },
+//     { hour: 22, minute:  0, second:  0 },
+//     { hour: 13, minute: 30, second: 55 }
+// ]
+
+console.log(match.parse('9:15 A.M. or 10pm', true, function (o) {
+    if (o.frame) o.frame = /P/i.test(o.frame) ? '下午' : '上午';
+    return o;
+}));
+// [  
+//     { frame: '上午', time: '9:15', match: '9:15 A.M' },
+//     { frame: '下午', time: '10', match: '10pm' }
+// ]
+
+console.log(match.is('9:00'));        // true
+console.log(match.is('09:00:03'));    // true
+console.log(match.is('9:00am'));      // true
+console.log(match.is('9am'));         // true
+console.log(match.is('9A.M.'));       // true
+console.log(match.is('9:00 A.M.'));   // true
+
+console.log(match.is('9'));           // false
+console.log(match.is('9mm'));         // false
+console.log(match.is('9:512'));       // false</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="URL"><span class="type-signature">(static) </span>URL<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理 <a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a> 的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_patterns.js.html">match/patterns.js</a>, <a href="match_patterns.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.URL;
+
+console.log(match.parse('smtp://www.me.com/user?id=3'));
+// [ { 
+//     query: 'id=3',
+//     path: 'user',
+//     host: 'www.me.com',
+//     slash: '//',
+//     scheme: 'smtp',
+//     match: 'smtp://www.me.com/user?id=3' 
+// } ]
+
+console.log(match.is('www.apple.com'));        // true
+console.log(match.is('file:///index.html'));   // true
+console.log(match.is('www.mac.com\\index'));   // false</code></pre>
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 15 2015 02:32:52 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

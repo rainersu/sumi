@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: match/match.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: match/match.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+define(
+[
+	'../core/cp',
+	'../core/type',
+	'../var/hasOP'
+]
+, function (
+	cp,
+	type,
+	hasOP
+) 
+{'use strict';
+
+var C = {},
+	P = {};
+
+function Match (p, k, f) {
+	this.source  =   p;
+	k = !k  ? [] : type(k) === 'string' ? k.split(/[\s,;|]+/) : Array(k);
+	k.unshift('match');
+	this.keys    =   k;
+	this.parser  =   f;
+}
+
+cp(
+	Match.prototype, 
+	{
+		build  : function (y, g) {
+			return R(this.source, y, g);
+		},
+		is     : function (s) {
+			return this.build(2).test( s );
+		},
+		in     : function (s, b) {
+			return this.build(b).test( s );
+		},
+		index  : function (s, b) {
+			return s.search(this.build( ));
+		},
+		match  : function (s, b) {
+			return s.match(this.build(b, 'g')) || [];
+		},
+		parse  : function (s, b, f) {
+			f = f || this.parser; 
+			var r = [],
+				k = this.keys,		
+				e = this.build(b, 'g'),
+				l,
+				a,
+				o,
+				v,
+				j;
+			while ((a = e.exec(s)) !== null) {
+				o = {};
+				for ( l = k.length; l--; ) {
+					v = a[l];
+					if (o[j = k[l] || l] === undefined &amp;&amp; v !== undefined) o[j] = v;
+				}
+				if (f) {
+					v = f(o);
+					if (v !== undefined) o = v;
+				}
+				r.push(o);
+			}
+			return r;
+		},
+		replace : function (s, f, b, g) {
+			return s.replace(this.build(b, g || 'g'), f);
+		}
+	}
+);
+
+cp(
+	Match, 
+	{
+		Pattern : P,
+		build   : R,
+		create  : N,
+		batch   : B,
+		clear   : function () { C = {}; },
+		cache   : true
+	}
+);
+
+function R (p, y, g) {
+	y = y |  0;
+	g = g ||'';
+	p = type(p) === 'regexp' ? p.source :  p;
+	p = (y > 1 ? '^(?:' + p + ')$' : y > 0 ? '(?:^|\\b)(?:' + p + ')(?:$|\\b)' : p);
+	y = '/'  + p +  '/' + g;
+	return C[y] || (C[y] = new RegExp(p, g));
+}
+
+function N (n, o) {
+	return P[n]  = 
+		type(o)  === 'array' ? 
+		new Match(o[0], o[1], o[2]) : 
+		(o =  Object(o), new Match(o.pattern, o.keys, o.parser));
+}
+
+function B (n) {
+	for (var i in n) if (hasOP.call(n, i)) {
+		N(i, n[i]);
+	}
+	return Match;
+}
+
+return Match;
+
+});
+
+/**
+* 正则表达式模板类型。为被封装的正则表达式提供更简易快捷的使用方式。
+* @class Sumi.Match
+* @see {@link Sumi.Pattern}
+* @see {@link Sumi.RegExp}
+* @see {@link external:RegExp}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp}
+* @see {@link https://msdn.microsoft.com/en-us/library/ie/9dthzd08(v=vs.94).aspx}
+* @param {string} pattern - 正则表达式字符串。相当于 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source RegExp.prototype.source}
+* @param {string|string[]} [keys] - 用于 {@link Sumi.Match#parse|parse} 方法的键值数组。也可以是用英文逗号或分号或空格分隔的字符串
+* @param {function} [parser] - 用于 {@link Sumi.Match#parse|parse} 方法的回调函数
+*/
+
+/**
+* 正则表达式模板集合。
+* @namespace Sumi.Pattern
+* @see {@link Sumi.Match}
+* @see {@link Sumi.RegExp}
+* @see {@link external:RegExp}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp}
+* @see {@link https://msdn.microsoft.com/en-us/library/ie/9dthzd08(v=vs.94).aspx}
+*/
+
+/**
+* 是否将被本类型的实例对象创建出的正则表达式对象都缓存起来。
+* @var {boolean} [Sumi.Match.cache=true]
+* @example
+* Sumi.Match.clear();
+* Sumi.Match.cache = false;
+*/
+	
+/**
+* 清空所有已缓存的正则表达式对象实例。
+* @access public
+* @func Sumi.Match.clear
+* @example
+* Sumi.Match.clear();
+* Sumi.Match.cache = false;
+*/
+
+/**
+* 快速创建本类型的一个实例并将它添加为 {@link Sumi.Pattern Pattern} 的静态成员。
+* @see {@link Sumi.Match.batch}
+* @access public
+* @func Sumi.Match.create
+* @param {string} name - 用作字段名的新建实例名
+* @param {object|array} params - 传递给构造函数的参数。参见下面示例
+* @returns {Sumi.Match}
+* @example
+* var rex = Sumi.Match.create('email', [ 
+*     '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
+ *    'user,domain' 
+* ]);
+* 
+* console.log(rex.parse('admin@me.com'));
+* // [ { domain: 'me.com', user: 'admin', match: 'admin@me.com' } ]
+* @example
+* var rex = Sumi.Match.create('email', { 
+*     pattern : '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
+*     keys    : 'user,domain' 
+* });
+* 
+* console.log(rex.parse('admin@me.com'));
+* // [ { domain: 'me.com', user: 'admin', match: 'admin@me.com' } ]
+*/
+
+/**
+* 批量创建本类型的实例，并将它们添加为 {@link Sumi.Pattern Pattern} 的静态成员。
+* @see {@link Sumi.Match.create}
+* @access public
+* @func Sumi.Match.batch
+* @param {object} params - 用于创建实例的参数键值对。参见下面示例
+* @returns {object} {@link Sumi.Match}
+* @example
+* Sumi.Match.batch({
+*     'email', [ 
+*         '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
+*         'user,domain' 
+*     ],
+*     'number', [
+*         '([+\\-]?\\d*)(?:\\.(\\d*))?(?:[eE]([+\\-]?\\d+))?',
+*         'int,decimal,exponential'	
+*     ]
+* });
+* 
+* console.log(Sumi.Pattern.email);
+* // { 
+* //     source: '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})',
+* //     keys: [ 'match', 'user', 'domain' ],
+* //     parser: undefined
+* // }
+*/
+
+/**
+* 测试一个字符串是否能完整匹配正则表达式模板。
+* @see {@link Sumi.Match#in}
+* @see {@link Sumi.Match#index}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search}
+* @access public
+* @func Sumi.Match.prototype.is
+* @param {string} str - 要检测的字符串
+* @returns {boolean}
+* @example
+* var match = new Sumi.Match('\\d+');
+* console.log(match.is('01'));           // true
+* console.log(match.is('0b'));           // true
+* 
+* var match = new Sumi.Match('^\\d+$');
+* console.log(match.is('01'));           // true
+* console.log(match.is('0b'));           // false
+* 
+* var match = new Sumi.Match('\\b\\d+\\b');
+* console.log(match.is('01'));           // true
+* console.log(match.is('0b'));           // false
+*/
+
+/**
+* 测试一个字符串是否能部分匹配正则表达式模板。
+* @see {@link Sumi.Match#is}
+* @see {@link Sumi.Match#index}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search}
+* @access public
+* @func Sumi.Match.prototype.in
+* @param {string} str - 要检测的字符串
+* @param {boolean} [wholeWord=false]
+* @param {boolean} wholeWord.true  - 整词匹配
+* @param {boolean} wholeWord.false - 不要求匹配整词 
+* @returns {boolean}
+* @example
+* var match = new Sumi.Match('\\d+');
+* console.log(match.in('01'));           // true
+* console.log(match.in('0x'));           // true
+* console.log(match.in('0x', true));     // false
+* 
+* var match = new Sumi.Match('^\\d+$');
+* console.log(match.in('01'));           // true
+* console.log(match.in('0x'));           // false
+* console.log(match.in('0x', true));     // false
+* 
+* var match = new Sumi.Match('\\b\\d+\\b');
+* console.log(match.in('01'));           // true
+* console.log(match.in('0x'));           // false
+* console.log(match.in('0x', true));     // false
+*/
+
+/**
+* 在字符串中搜索第一个匹配结果的位置。
+* @see {@link Sumi.Match#is}
+* @see {@link Sumi.Match#in}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search}
+* @access public
+* @func Sumi.Match.prototype.index
+* @param {string} str - 要检测的字符串
+* @param {boolean} [wholeWord=false]
+* @param {boolean} wholeWord.true  - 整词匹配
+* @param {boolean} wholeWord.false - 不要求匹配整词 
+* @returns {number} 匹配结果的索引值。如果没找到则返回 -1
+* @example
+* var match = new Sumi.Match('\\d+');
+* console.log(match.index('01'));           //  0
+* console.log(match.index('0x'));           //  0
+* console.log(match.index('0x', true));     //  0
+* 
+* var match = new Sumi.Match('^\\d+$');
+* console.log(match.index('01'));           //  0
+* console.log(match.index('0x'));           // -1
+* console.log(match.index('0x', true));     // -1
+* 
+* var match = new Sumi.Match('\\b\\d+\\b');
+* console.log(match.index('01'));           //  0
+* console.log(match.index('0x'));           // -1
+* console.log(match.index('0x', true));     // -1
+*/
+
+/**
+* 对字符串做全文搜索，并将所有符合正则表达式模板的匹配结果返回为数组。
+* @see {@link Sumi.Match#parse}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match}
+* @access public
+* @func Sumi.Match.prototype.match
+* @param {string} str - 要搜索的字符串
+* @param {boolean} [wholeWord=false]
+* @param {boolean} wholeWord.true  - 整词匹配
+* @param {boolean} wholeWord.false - 不要求匹配整词 
+* @returns {string[]} 搜索结果数组。如果没找到则返回空数组
+* @example
+* var match = new Sumi.Match('\\d+');
+* console.log(match.match('a0b12c'));           // [ '0', '12' ]
+* console.log(match.match('a0b12c', true));     // []
+* console.log(match.match('abcdef'));           // []
+* 
+* var match = new Sumi.Match('\\b\\d+\\b');
+* console.log(match.match('a0b12c'));           // []
+* console.log(match.match('0-12-c'));           // [ '0', '12' ]
+* console.log(match.match('0-12-c', true));     // [ '0', '12' ]
+*/
+
+/**
+* 对字符串做全文搜索，将每一个匹配结果根据由 {@link Sumi.Match keys} 指定的键值解析为对象，并将所有结果返回为数组。
+* @see {@link Sumi.Match#match}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec}
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match}
+* @access public
+* @func Sumi.Match.prototype.parse
+* @param {string} str - 要搜索的字符串
+* @param {boolean} [wholeWord=false]
+* @param {boolean} wholeWord.true  - 整词匹配
+* @param {boolean} wholeWord.false - 不要求匹配整词 
+* @param {Sumi.Match~execCallback} [parser] - 对每个解析出来的对象进一步做检测或处理校正的回调函数。优先级大于{@link Sumi.Match 构造函数}中所指定的
+* @returns {object[]} 解析结果数组。如果没找到则返回空数组
+* @example
+* var num = new Sumi.Match('(\\d+)(?:\\.(\\d+))?', 'int, dec');
+* 
+* console.log(num.parse('1.2'));           
+* // [ { match: '1.2', int: '1', dec: '2' } ]
+* 
+* console.log(num.parse('1.2 + 3.3'));     
+* // [ { dec: '2', int: '1', match: '1.2' }, { dec: '3', int: '3', match: '3.3' } ]
+* @example
+* var num = new Sumi.Match('(\\d+)(?:\\.(\\d+))?', 'int, dec', function (o) {
+*     return o.match + 'px';
+* });
+* 
+* console.log(num.parse('{ top: 5; left: 3 }'));           
+* // [ '5px', '3px' ]
+*/
+
+/**
+* 基于当前正则表达式模板编译出正则表达式对象。
+* @see {@link Sumi.Match.build}
+* @access public
+* @func Sumi.Match.prototype.build
+* @param {number} [mode=0]
+* @param {number}  mode.0  - 直接使用创建时提供的正则表达式
+* @param {number}  mode.1  - 将正则表达式调整为整词匹配模式
+* @param {number}  mode.2  - 将正则表达式调整为全文匹配模式 
+* @param {string} [flags]  - 指定正则表达式所使用的 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags flags}
+* @returns {regexp} 创建并激活的正则表达式
+* @example
+* var txt = '{ top: 5px; z-index: 3; }';
+* var num = new Sumi.Match('\\d+');
+* 
+* var rex = num.build(0, 'g');
+* console.log(txt.match(rex));           
+* // [ '5', '3' ]
+* 
+* var rex = num.build(1, 'g');
+* console.log(txt.match(rex)); 
+* // [ '3' ]
+* 
+* var rex = num.build(2, 'g');
+* console.log(txt.match(rex)); 
+* // null
+*/
+
+/**
+* 基于当前正则表达式模板编译出正则表达式对象。
+* @see {@link Sumi.Match#build}
+* @access public
+* @func Sumi.Match.build
+* @param {string} pattern - 正则表达式字符串。相当于 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source RegExp.prototype.source}
+* @param {number} [mode=0]
+* @param {number}  mode.0  - 直接使用创建时提供的正则表达式
+* @param {number}  mode.1  - 将正则表达式调整为整词匹配模式
+* @param {number}  mode.2  - 将正则表达式调整为全文匹配模式 
+* @param {string} [flags]  - 指定正则表达式所使用的 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags flags}
+* @returns {regexp} 创建并激活的正则表达式
+* @example
+* var txt = '{ top: 5px; z-index: 3; }';
+* 
+* var rex = Sumi.Match.build('\\d+', 0, 'g');
+* console.log(txt.match(rex));           
+* // [ '5', '3' ]
+* 
+* var rex = Sumi.Match.build('\\d+', 1, 'g');
+* console.log(txt.match(rex)); 
+* // [ '3' ]
+* 
+* var rex = Sumi.Match.build('\\d+', 2, 'g');
+* console.log(txt.match(rex)); 
+* // null
+*/
+
+/**
+* 在字符串中搜索并替换匹配结果。
+* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace String.prototype.replace}
+* @access public
+* @func Sumi.Match.prototype.replace
+* @param {string} str - 要搜索的字符串
+* @param {string|function} substitute - 替换匹配结果的字符串或回调函数。参见 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace String.prototype.replace}
+* @param {boolean} [wholeWord=false]
+* @param {boolean} wholeWord.true  - 整词匹配
+* @param {boolean} wholeWord.false - 不要求匹配整词 
+* @param {string} [flags='g']  - 指定正则表达式所使用的 {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags flags}
+* @returns {string} 
+* @example
+* var rex = new Sumi.Match('\\d+');
+* 
+* console.log(rex.replace('{ top: 5; z-index: 3; }', '$&amp;em'));           
+* // { top: 5em; z-index: 3em; }
+* 
+* console.log(rex.replace('{ top: 5; z-index: 3; }', function(i) { return i + 'em'; })); 
+* // { top: 5em; z-index: 3em; }
+*/
+
+/**
+* @see {@link Sumi.Match#parse}
+* @callback Sumi.Match~execCallback
+* @param {object} matchResult - 当前被遍历到的已被处理为键值对的匹配获取结果
+* @returns {undefined|*} 如果有返回值，则该返回值将取代当前匹配获取结果
+*/
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 15 2015 02:32:51 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
