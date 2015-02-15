@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line99">line 99</a>
+        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -98,6 +98,9 @@
             <dd></dd>
         
             <dt><a href="Sumi.Match.html">Match</a></dt>
+            <dd></dd>
+        
+            <dt><a href="Sumi.Sort.html">Sort</a></dt>
             <dd></dd>
         </dl>
     
@@ -490,6 +493,10 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.html#int">Sumi.int</a></li>
+        
+            <li><a href="Sumi.html#num">Sumi.num</a></li>
+        
             <li><a href="Sumi.html#func">Sumi.func</a></li>
         </ul>
     </dd>
@@ -1790,6 +1797,10 @@ console.log(Sumi.eq(x, y, true));                  // true</code></pre>
     <dd class="tag-see">
         <ul>
             <li><a href="Sumi.html#arr">Sumi.arr</a></li>
+        
+            <li><a href="Sumi.html#int">Sumi.int</a></li>
+        
+            <li><a href="Sumi.html#num">Sumi.num</a></li>
         </ul>
     </dd>
     
@@ -1846,6 +1857,184 @@ console.log(Sumi.func( ).toString());
 
 console.log(Sumi.func(8).toString());
 // function anonymous() { 8 }</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="int"><span class="type-signature">(static) </span>int<span class="signature">(val)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将任意变量转换为一个整数。转换失败，<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a> 都会返回为 0 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">待转换值</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_int.js.html">core/int.js</a>, <a href="core_int.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#num">Sumi.num</a></li>
+        
+            <li><a href="Sumi.html#arr">Sumi.arr</a></li>
+        
+            <li><a href="Sumi.html#func">Sumi.func</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.int());                    // 0
+console.log(Sumi.int(0x32));                // 50
+console.log(Sumi.int(038));                 // 38
+console.log(Sumi.int('.038'));              // 0
+console.log(Sumi.int([]));                  // 0
+console.log(Sumi.int([3]));                 // 3
+console.log(Sumi.int({}));                  // 0
+console.log(Sumi.int(null));                // 0
+console.log(Sumi.int('3px'));               // 3
+console.log(Sumi.int('5%'));                // 5
+console.log(Sumi.int(new Date(2015)));      // 2015
+console.log(Sumi.int(new Date(2015, 3)));   // 1427817600000
+console.log(Sumi.int('.3m'));               // 0
+console.log(Sumi.int('No.3'));              // 0
+console.log(Sumi.int('F4'));                // 0</code></pre>
 
     
 </dd>
@@ -2982,6 +3171,184 @@ console.log(A === Array);       // true</code></pre>
             
 <dt>
     
+        <h4 class="name" id="num"><span class="type-signature">(static) </span>num<span class="signature">(val)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将任意变量转换为一个数字。转换失败，<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a> 都会返回为 0 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">如果是一个数字，则直接返回。否则将尝试转换。如果失败则返回 0 而非 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_num.js.html">core/num.js</a>, <a href="core_num.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#int">Sumi.int</a></li>
+        
+            <li><a href="Sumi.html#arr">Sumi.arr</a></li>
+        
+            <li><a href="Sumi.html#func">Sumi.func</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.num());                    // 0
+console.log(Sumi.num(0x32));                // 50
+console.log(Sumi.num(038));                 // 38
+console.log(Sumi.num('.038'));              // 0.038
+console.log(Sumi.num([]));                  // 0
+console.log(Sumi.num([3]));                 // 3
+console.log(Sumi.num({}));                  // 0
+console.log(Sumi.num(null));                // 0
+console.log(Sumi.num('3px'));               // 3
+console.log(Sumi.num('5%'));                // 5
+console.log(Sumi.num(new Date(2015)));      // 2015
+console.log(Sumi.num(new Date(2015, 3)));   // 1427817600000
+console.log(Sumi.num('.3m'));               // 0.3
+console.log(Sumi.num('No.3'));              // 0
+console.log(Sumi.num('F4'));                // 0</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
         <h4 class="name" id="stringify"><span class="type-signature">(static) </span>stringify<span class="signature">(val, opt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
         
@@ -3981,13 +4348,13 @@ console.log(Sumi.zip(['x', 'y', 'z'], [1, 2, 3]));
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li><li><a href="Sumi.Sort.html">Sort</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.String.html">String</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Sun Feb 15 2015 02:32:51 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 00:25:31 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
