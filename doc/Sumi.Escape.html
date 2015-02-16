@@ -72,7 +72,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line54">line 54</a>
+        <a href="escape_index.js.html">escape/index.js</a>, <a href="escape_index.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -462,7 +462,7 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
 
     
     <div class="description">
-        还原 HTML 中用命名实体（Named Character Entities）替代的特殊字符。
+        还原 HTML 中用命名实体（<a href="http://www.w3.org/TR/WD-html40-970708/sgml/entities.html">Named Character Entities</a>）替代的特殊字符。
     </div>
     
 
@@ -631,7 +631,7 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
 
     
     <div class="description">
-        对正则表达式的特殊字符做反转义处理。
+        对<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">正则表达式</a>的特殊字符做反转义处理。
     </div>
     
 
@@ -1303,7 +1303,7 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
 
     
     <div class="description">
-        将 HTML 中的特殊字符使用命名实体（Named Character Entities）替代。
+        将 HTML 中的特殊字符使用命名实体（<a href="http://www.w3.org/TR/WD-html40-970708/sgml/entities.html">Named Character Entities</a>）替代。
     </div>
     
 
@@ -1472,7 +1472,7 @@ console.log(Sumi.Escape.decodeBase64URI('5bCP6aO85by-'));
 
     
     <div class="description">
-        对正则表达式中的特殊字符做转义处理。
+        对<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">正则表达式</a>中的特殊字符做转义处理。
     </div>
     
 
@@ -1798,7 +1798,7 @@ console.log(Sumi.Escape.encodeUTF8('\uD800\uDC01') === '\xF0\x90\x80\x81');</cod
 
     
     <div class="description">
-        将字符串中的西欧字符 (Latin-1 Supplement) 用无变音符号的基本拉丁字母替代。
+        将字符串中的西欧字符 (<a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_%2528Unicode_block%2529#Character_table">Latin-1 Supplement</a>) 用无变音符号的基本拉丁字母替代。
     </div>
     
 
@@ -1943,6 +1943,178 @@ console.log(Sumi.Escape.encodeUTF8('\uD800\uDC01') === '\xF0\x90\x80\x81');</cod
         <h5>Example</h5>
         
     <pre class="prettyprint"><code>console.log(Sumi.Escape.escapeLatin1('déjà vu'));      // deja vu</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="hexToStr"><span class="type-signature">(static) </span>hexToStr<span class="signature">(hex)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        从十六进制 Unicode Codepoint 或 Latin-1 character 码值的数组还原出字符串。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">十六进制 Unicode Codepoint 或 Latin-1 character 码值的数组</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_charCode.js.html">escape/charCode.js</a>, <a href="escape_charCode.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#strToHex">Sumi.Escape.strToHex</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.hexToStr([ '4e2d', '534e', '6c11', '56fd' ]));
+// 中华民国</code></pre>
+
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.hexToStr('68', '74', '74', '70', '3a', '2f', '2f', '6d', '65', '2e', '63', '6f', '6d'));
+// http://me.com</code></pre>
 
     
 </dd>
@@ -2682,7 +2854,7 @@ console.log(y);
 
     
     <div class="description">
-        移除 Unicode 字符串中的组合用附加符号 (Unicode combining marks) 。
+        移除 Unicode 字符串中的组合用附加符号 (<a href="http://en.wikipedia.org/wiki/Combining_character">Unicode combining marks</a>) 。
     </div>
     
 
@@ -2833,7 +3005,7 @@ console.log(y);
             
 <dt>
     
-        <h4 class="name" id="toCSSProp"><span class="type-signature">(static) </span>toCSSProp<span class="signature">(str, connector<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+        <h4 class="name" id="strToHex"><span class="type-signature">(static) </span>strToHex<span class="signature">(&hellip;str)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
 
         
     
@@ -2842,7 +3014,7 @@ console.log(y);
 
     
     <div class="description">
-        将HTML 属性名称转换为烤串表示法（Kebab Case）的 CSS  属性名称格式。
+        将字符串逐字符转换成十六进制 Unicode Codepoint 或 Latin-1 character 码值的数组。
     </div>
     
 
@@ -2869,8 +3041,6 @@ console.log(y);
         <th>Attributes</th>
         
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2901,55 +3071,14 @@ console.log(y);
                 
 
                 
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">文本</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>connector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
+                    &lt;repeatable><br>
                 
                 </td>
             
 
             
-                <td class="default">
-                
-                    '-'
-                
-                </td>
-            
 
-            <td class="description last">单词连接符</td>
+            <td class="description last">输入字符串</td>
         </tr>
 
     
@@ -2987,7 +3116,7 @@ console.log(y);
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_notation.js.html">escape/notation.js</a>, <a href="escape_notation.js.html#line31">line 31</a>
+        <a href="escape_charCode.js.html">escape/charCode.js</a>, <a href="escape_charCode.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -2997,6 +3126,512 @@ console.log(y);
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.Escape.html#hexToStr">Sumi.Escape.hexToStr</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt</a></li>
+        
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.strToHex('中华民国'));         
+// [ '4e2d', '534e', '6c11', '56fd' ]</code></pre>
+
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.strToHex('http://me.com'));
+// [ '68', '74', '74', '70', '3a', '2f', '2f', '6d', '65', '2e', '63', '6f', '6d' ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="toCSSProp"><span class="type-signature">(static) </span>toCSSProp<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将字符串转换为烤串表示法（<a href="http://en.wikipedia.org/wiki/Letter_case">Kebab Case</a>）的 CSS  属性名称格式。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_notation.js.html">escape/notation.js</a>, <a href="escape_notation.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#toHTMAttr">Sumi.Escape.toHTMAttr</a></li>
+        
+            <li><a href="Sumi.Escape.html#toJSConst">Sumi.Escape.toJSConst</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.toCSSProp('ms-box-sizing'));        // -ms-box-sizing
+console.log(Sumi.Escape.toCSSProp('MS_BOX_SIZING'));        // -ms-box-sizing
+console.log(Sumi.Escape.toCSSProp('__proto__'));            //  proto
+console.log(Sumi.Escape.toCSSProp('boxSizing'));            //  box-sizing
+console.log(Sumi.Escape.toCSSProp('MozBoxSizing'));         // -moz-box-sizing</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="toHTMAttr"><span class="type-signature">(static) </span>toHTMAttr<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将字符串转换为驼峰表示法（<a href="http://en.wikipedia.org/wiki/CamelCase">Camel Case</a>）的 HTML 属性名称格式。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_notation.js.html">escape/notation.js</a>, <a href="escape_notation.js.html#line53">line 53</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#toCSSProp">Sumi.Escape.toCSSProp</a></li>
+        
+            <li><a href="Sumi.Escape.html#toJSConst">Sumi.Escape.toJSConst</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.toHTMAttr('__proto__'));            // proto
+console.log(Sumi.Escape.toHTMAttr('MS_BOX_SIZING'));        // msBoxSizing
+console.log(Sumi.Escape.toHTMAttr('box-sizing'));           // boxSizing
+console.log(Sumi.Escape.toHTMAttr('-moz-box-sizing'));      // MozBoxSizing
+console.log(Sumi.Escape.toHTMAttr('-ms-grid-row-span'));    // msGridRowSpan</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="toJSConst"><span class="type-signature">(static) </span>toJSConst<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        将字符串转换为蛇形表示法（<a href="http://en.wikipedia.org/wiki/Snake_case">Snake Case</a>）的 Javascript 常量名格式。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">文本</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="escape_notation.js.html">escape/notation.js</a>, <a href="escape_notation.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Escape.html#toCSSProp">Sumi.Escape.toCSSProp</a></li>
+        
             <li><a href="Sumi.Escape.html#toHTMAttr">Sumi.Escape.toHTMAttr</a></li>
         </ul>
     </dd>
@@ -3039,171 +3674,11 @@ console.log(y);
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>console.log(Sumi.Escape.toCSSProp('boxSizing'));           //  box-sizing
-console.log(Sumi.Escape.toCSSProp('MozBoxSizing'));        // -moz-box-sizing
-console.log(Sumi.Escape.toCSSProp('mozBoxSizing', '_'));   //  moz_box_sizing</code></pre>
-
-    
-</dd>
-
-        
-            
-<dt>
-    
-        <h4 class="name" id="toHTMAttr"><span class="type-signature">(static) </span>toHTMAttr<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        将样式表属性名称转换为驼峰表示法（Camel Case）的 HTML 属性名称格式。
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>str</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">文本</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="escape_notation.js.html">escape/notation.js</a>, <a href="escape_notation.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="Sumi.Escape.html#toCSSProp">Sumi.Escape.toCSSProp</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>console.log(Sumi.Escape.toHTMAttr('box-sizing'));       // boxSizing
-console.log(Sumi.Escape.toHTMAttr('-moz-box-sizing'));  // MozBoxSizing
-console.log(Sumi.Escape.toHTMAttr('-ms-grid-row-span'));  // msGridRowSpan</code></pre>
+    <pre class="prettyprint"><code>console.log(Sumi.Escape.toJSConst('__proto__'));            //  PROTO
+console.log(Sumi.Escape.toJSConst('MS_BOX_SIZING'));        //  MS_BOX_SIZING
+console.log(Sumi.Escape.toJSConst('ms-box-sizing'));        //  MS_BOX_SIZING
+console.log(Sumi.Escape.toJSConst('boxSizing'));            //  BOX_SIZING
+console.log(Sumi.Escape.toJSConst('MozBoxSizing'));         //  MOZ_BOX_SIZING</code></pre>
 
     
 </dd>
@@ -3562,7 +4037,7 @@ console.log(Sumi.Escape.toTradHanzi(str));
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 00:25:31 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 21:44:53 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>

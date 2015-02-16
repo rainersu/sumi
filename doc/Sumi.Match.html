@@ -221,7 +221,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line113">line 113</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -340,7 +340,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line136">line 136</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line118">line 118</a>
     </li></ul></dd>
     
 
@@ -370,186 +370,6 @@ Sumi.Match.cache = false;</code></pre>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-            
-<dt>
-    
-        <h4 class="name" id="batch"><span class="type-signature">(static) </span>batch<span class="signature">(params)</span><span class="type-signature"> &rarr; {object}</span></h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        批量创建本类型的实例，并将它们添加为 <a href="Sumi.Pattern.html">Pattern</a> 的静态成员。
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">用于创建实例的参数键值对。参见下面示例</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line179">line 179</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="Sumi.Match.html#create">Sumi.Match.create</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <a href="Sumi.Match.html">Sumi.Match</a>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">object</span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="prettyprint"><code>Sumi.Match.batch({
-    'email', [ 
-        '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
-        'user,domain' 
-    ],
-    'number', [
-        '([+\\-]?\\d*)(?:\\.(\\d*))?(?:[eE]([+\\-]?\\d+))?',
-        'int,decimal,exponential'	
-    ]
-});
-
-console.log(Sumi.Pattern.email);
-// { 
-//     source: '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})',
-//     keys: [ 'match', 'user', 'domain' ],
-//     parser: undefined
-// }</code></pre>
-
-    
-</dd>
-
-        
             
 <dt>
     
@@ -838,7 +658,7 @@ console.log(Sumi.Pattern.email);
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line373">line 373</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -966,7 +786,7 @@ console.log(txt.match(rex));
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line144">line 144</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -995,206 +815,6 @@ console.log(txt.match(rex));
         
     <pre class="prettyprint"><code>Sumi.Match.clear();
 Sumi.Match.cache = false;</code></pre>
-
-    
-</dd>
-
-        
-            
-<dt>
-    
-        <h4 class="name" id="create"><span class="type-signature">(static) </span>create<span class="signature">(name, params)</span><span class="type-signature"> &rarr; {<a href="Sumi.Match.html">Sumi.Match</a>}</span></h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        快速创建本类型的一个实例并将它添加为 <a href="Sumi.Pattern.html">Pattern</a> 的静态成员。
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">用作字段名的新建实例名</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-|
-
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">传递给构造函数的参数。参见下面示例</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line153">line 153</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="Sumi.Match.html#batch">Sumi.Match.batch</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-        <h5>Examples</h5>
-        
-    <pre class="prettyprint"><code>var rex = Sumi.Match.create('email', [ 
-    '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
-   'user,domain' 
-]);
-
-console.log(rex.parse('admin@me.com'));
-// [ { domain: 'me.com', user: 'admin', match: 'admin@me.com' } ]</code></pre>
-
-    <pre class="prettyprint"><code>var rex = Sumi.Match.create('email', { 
-    pattern : '([-0-9a-zA-Z.+_]+)@([-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4})', 
-    keys    : 'user,domain' 
-});
-
-console.log(rex.parse('admin@me.com'));
-// [ { domain: 'me.com', user: 'admin', match: 'admin@me.com' } ]</code></pre>
 
     
 </dd>
@@ -1453,7 +1073,7 @@ console.log(rex.parse('admin@me.com'));
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line345">line 345</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line274">line 274</a>
     </li></ul></dd>
     
 
@@ -1756,7 +1376,7 @@ console.log(txt.match(rex));
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line230">line 230</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -2061,7 +1681,7 @@ console.log(match.in('0x', true));     // false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line260">line 260</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -2246,7 +1866,7 @@ console.log(match.index('0x', true));     // -1</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line206">line 206</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line135">line 135</a>
     </li></ul></dd>
     
 
@@ -2548,7 +2168,7 @@ console.log(match.is('0b'));           // false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line291">line 291</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line220">line 220</a>
     </li></ul></dd>
     
 
@@ -2887,7 +2507,7 @@ console.log(match.match('0-12-c', true));     // [ '0', '12' ]</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line315">line 315</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line244">line 244</a>
     </li></ul></dd>
     
 
@@ -3271,7 +2891,7 @@ console.log(num.parse('{ top: 5; left: 3 }'));
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line401">line 401</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line330">line 330</a>
     </li></ul></dd>
     
 
@@ -3439,7 +3059,7 @@ console.log(rex.replace('{ top: 5; z-index: 3; }', function(i) { return i + 'em'
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line423">line 423</a>
+        <a href="match_match.js.html">match/match.js</a>, <a href="match_match.js.html#line352">line 352</a>
     </li></ul></dd>
     
 
@@ -3518,7 +3138,7 @@ console.log(rex.replace('{ top: 5; z-index: 3; }', function(i) { return i + 'em'
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 00:25:31 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 21:44:53 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
