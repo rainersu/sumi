@@ -114,6 +114,9 @@
             <dt><a href="Sumi.Boolean.html">Boolean</a></dt>
             <dd></dd>
         
+            <dt><a href="Sumi.Const.html">Const</a></dt>
+            <dd></dd>
+        
             <dt><a href="Sumi.Date.html">Date</a></dt>
             <dd></dd>
         
@@ -155,229 +158,6 @@
         </dl>
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt>
-    <h4 class="name" id="ECMA_RESERVED_WORDS"><span class="type-signature">(static) </span>ECMA_RESERVED_WORDS<span class="type-signature"> :Array.&lt;string></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Javascript 中的保留字。
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            </li>
-        </ul>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="const_ECMA_RESERVED_WORDS.js.html">const/ECMA_RESERVED_WORDS.js</a>, <a href="const_ECMA_RESERVED_WORDS.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="HTML_SPECIAL_CHARS"><span class="type-signature">(static) </span>HTML_SPECIAL_CHARS<span class="type-signature"> :Array.&lt;string></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        HTML 中的特殊字符。
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            </li>
-        </ul>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="const_HTML_SPECIAL_CHARS.js.html">const/HTML_SPECIAL_CHARS.js</a>, <a href="const_HTML_SPECIAL_CHARS.js.html#line8">line 8</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="REGEX_SPECIAL_CHARS"><span class="type-signature">(static) </span>REGEX_SPECIAL_CHARS<span class="type-signature"> :Array.&lt;string></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        正则表达式中需要转义的特殊元字符。
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-            </li>
-        </ul>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="const_REGEX_SPECIAL_CHARS.js.html">const/REGEX_SPECIAL_CHARS.js</a>, <a href="const_REGEX_SPECIAL_CHARS.js.html#line8">line 8</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -874,6 +654,258 @@ console.log(x + '' === y + '');             // true</code></pre>
 var y = Sumi.clone(x);
 console.log(x == y);                        // false
 console.log(x.toString() == y.toString());  // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="compare"><span class="type-signature">(static) </span>compare<span class="signature">(a, b, ns<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        比较两个参数大小。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">要比较的第一个值</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">要比较的第二个值</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">用于比较的属性值列表。优先级按先后次序。符合 a.b.c 格式的属性链路径，参见 <a href="Sumi.html#prop">Sumi.prop</a></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_compare.js.html">core/compare.js</a>, <a href="core_compare.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#eq">Sumi.eq</a></li>
+        
+            <li><a href="Sumi.Sort.html">Sumi.Sort</a></li>
+        
+            <li><a href="Sumi.Array.html#reorder">Sumi.Array.reorder</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    a === b 则返回 0 ，a > b 则返回 1 ，否则返回 -1
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.compare(3, 1));               //  1
+console.log(Sumi.compare(NaN, 1));             // -1
+console.log(Sumi.compare(NaN, NaN));           //  0</code></pre>
+
+    <pre class="prettyprint"><code>var a = { x: 1, y: 2 };
+var b = { x: 1, y: 1, z: 1 };
+console.log(Sumi.compare(a, b));               // -1
+console.log(Sumi.compare(a, b, ['x']));        //  0
+console.log(Sumi.compare(a, b, ['y']));        //  1
+console.log(Sumi.compare(a, b, ['z']));        // -1
+console.log(Sumi.compare(a, b, ['x', 'y']));   //  1</code></pre>
 
     
 </dd>
@@ -1603,6 +1635,8 @@ console.log(x.b == y.b);               // false</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
+            <li><a href="Sumi.html#compare">Sumi.compare</a></li>
+        
             <li><a href="external-Object.html#is">external:Object.is</a></li>
         </ul>
     </dd>
@@ -3107,6 +3141,13 @@ console.log(Sumi.mixin(1, 'abc', true, [ 1, 2 ], [ 2 ]));
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#prop">Sumi.prop</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -3344,6 +3385,196 @@ console.log(Sumi.num(new Date(2015, 3)));   // 1427817600000
 console.log(Sumi.num('.3m'));               // 0.3
 console.log(Sumi.num('No.3'));              // 0
 console.log(Sumi.num('F4'));                // 0</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id="prop"><span class="type-signature">(static) </span>prop<span class="signature">(obj, ns)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        根据为对象指定的属性链路径获取最终属性值。如果属性链中任一环节不存在，则返回 undefined 。
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">根对象</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">符合 a.b.c 格式的命名空间完整路径</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_prop.js.html">core/prop.js</a>, <a href="core_prop.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.html#ns">Sumi.ns</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+        <h5>Examples</h5>
+        
+    <pre class="prettyprint"><code>console.log(Sumi.prop());   // undefined
+console.log(Sumi.prop(Math, 'xxx.zzz'));   // undefined
+console.log(Sumi.prop(Function, 'prototype.constructor.toString'));   // [Function: toString]</code></pre>
+
+    <pre class="prettyprint"><code>var o = { a: { b: { c: [3, 8] } } };
+console.log(Sumi.prop(o, 'a.b.c.0'));        // 3
+console.log(Sumi.prop(o, 'a.b.c.1'));        // 8
+console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
 
     
 </dd>
@@ -4351,13 +4582,13 @@ console.log(Sumi.zip(['x', 'y', 'z'], [1, 2, 3]));
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.Sort.html">Sort</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Const.html">Const</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.Sort.html">Sort</a></li><li><a href="Sumi.String.html">String</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Feb 16 2015 21:54:40 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 17 2015 13:13:29 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
