@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: object/ECMA/index.js</title>
+    <title>JSDoc: Source: sort/algorithm/gnome.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: object/ECMA/index.js</h1>
+    <h1 class="page-title">Source: sort/algorithm/gnome.js</h1>
 
     
 
@@ -29,36 +29,33 @@
             <pre class="prettyprint source linenums"><code>
 define(
 [
-	'./create',
-	'./assign',
-	'./getPrototypeOf',
-	'./is',
-	'./keys'
+	'./util/swap'
 ]
-, function (
-	create,
-	assign,
-	getPrototypeOf,
-	is,
-	keys
+,function (
+	swap
 ) 
 {'use strict';
 
-Object.create = create;
-Object.assign = assign;
-Object.getPrototypeOf = getPrototypeOf;
-Object.is = is;
-Object.keys = keys;
+return function (c, l, p){
+	var i = 1;
+	while (i &lt; l) {
+		if (swap(c, i - 1, i, p)) {
+			if (i > 1) i--;
+		}
+		else i++;
+	}
+	return c;
+};
 
 });
-
+								
 /**
-* @external Object
-* @see {@link Sumi.Object}
-* @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object}
-* @see {@link https://msdn.microsoft.com/en-us/library/ie/kb6te8d3(v=vs.94).aspx}
+* 地精排序。
+* @see {@link http://en.wikipedia.org/wiki/Gnome_sort}
+* @access public
+* @func Sumi.Sort.gnome
 */
-	</code></pre>
+</code></pre>
         </article>
     </section>
 

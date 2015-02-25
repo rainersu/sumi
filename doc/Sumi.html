@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line87">line 87</a>
+        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -3509,7 +3509,7 @@ console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
             
 <dt>
     
-        <h4 class="name" id="sort"><span class="type-signature">(static) </span>sort<span class="signature">(arr, val<span class="signature-attributes">opt</span>, algorithm<span class="signature-attributes">opt</span>, compare<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
+        <h4 class="name" id="sort"><span class="type-signature">(static) </span>sort<span class="signature">(arr, val<span class="signature-attributes">opt</span>, compare<span class="signature-attributes">opt</span>, algorithm<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
 
         
     
@@ -3713,6 +3713,39 @@ console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
 
         <tr>
             
+                <td class="name"><code>compare</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Sumi.Sort.html#compareCallback">Sumi.Sort~compareCallback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">用于替换内置默认比较函数的自定义比较函数</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>algorithm</code></td>
             
 
@@ -3743,39 +3776,6 @@ console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
             
 
             <td class="description last"><a href="Sumi.Sort.html">预定义排序算法的名称</a> 或 <a href="Sumi.Sort.html#algorithmCallback">自定义排序算法的函数实现</a></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>compare</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Sumi.Sort.html#compareCallback">Sumi.Sort~compareCallback</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">用于替换内置默认比较函数的自定义比较函数</td>
         </tr>
 
     
@@ -3813,7 +3813,7 @@ console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sort_sort.js.html">sort/sort.js</a>, <a href="sort_sort.js.html#line38">line 38</a>
+        <a href="sort_sort.js.html">sort/sort.js</a>, <a href="sort_sort.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -3873,17 +3873,17 @@ console.log(Sumi.prop(o, 'a.b.c.length'));   // 2</code></pre>
     
         <h5>Examples</h5>
         
-    <pre class="prettyprint"><code>var arr = new Array(1, 3);
-console.log(Sumi.sort(arr, 0, 'cocktail'));   // [ 1, 3 ]
+    <pre class="prettyprint"><code>var arr = new Array(3, 1);
+console.log(Sumi.sort(arr));   // [ 1, 3 ]
 arr[3] = 0;
-console.log(Sumi.sort(arr, 0, 'cocktail'));   // [ undefined, 0, 1, 3 ]</code></pre>
+console.log(Sumi.sort(arr));   // [ undefined, 0, 1, 3 ]</code></pre>
 
     <pre class="prettyprint"><code>var arr = [ 8, 3, -1, 'a', 0, '5.5', NaN, null ];
 
-console.log(Sumi.sort(arr, 0, 'cocktail'));
+console.log(Sumi.sort(arr));
 // [ NaN, null, -1, 0, 3, 8, '5.5', 'a' ]
 
-console.log(Sumi.sort(arr, [ function(o) { return +o; } ], 'cocktail'));
+console.log(Sumi.sort(arr, [ function(o) { return +o; } ]));
 // [ 'a', NaN, -1, 0, null, 3, '5.5', 8 ]</code></pre>
 
     <pre class="prettyprint"><code>var arr = [ 
@@ -3893,7 +3893,7 @@ console.log(Sumi.sort(arr, [ function(o) { return +o; } ], 'cocktail'));
     { a: 2, b: 'b' } 
 ];
 
-console.log(Sumi.sort(arr, ['a'], 'cocktail'));
+console.log(Sumi.sort(arr, ['a']));
 // [
 //     { a: 1, b: 'a' },
 //     { a: 2, b: 'c' },
@@ -3901,15 +3901,14 @@ console.log(Sumi.sort(arr, ['a'], 'cocktail'));
 //     { a: 3, b: 'b' } 
 // ]
 
-console.log(Sumi.sort(arr, ['a', 'b'], 'cocktail'));
+console.log(Sumi.sort(arr, ['a', 'b']));
 // [ 
 //     { a: 1, b: 'a' },
 //     { a: 2, b: 'b' },
 //     { a: 2, b: 'c' },
 //     { a: 3, b: 'b' } 
 // ]
-
-console.log(Sumi.sort(arr, [ function(o) { return 0 - o.a; }, 'b' ], 'cocktail'));
+console.log(Sumi.sort(arr, [ function(o) { return 0 - o.a; }, 'b' ]));
 // [ 
 //     { a: 3, b: 'b' },
 //     { a: 2, b: 'b' },
@@ -4929,7 +4928,7 @@ console.log(Sumi.zip(['x', 'y', 'z'], [1, 2, 3]));
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 25 2015 19:29:34 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 25 2015 20:30:17 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
