@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line81">line 81</a>
+        <a href="sumi.js.html">sumi.js</a>, <a href="sumi.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -139,9 +139,6 @@
             <dd></dd>
         
             <dt><a href="Sumi.Object.html">Object</a></dt>
-            <dd></dd>
-        
-            <dt><a href="Sumi.Pattern.html">Pattern</a></dt>
             <dd></dd>
         
             <dt><a href="Sumi.Pattern.html">Pattern</a></dt>
@@ -339,7 +336,7 @@ console.log(Sumi.arr(1, 2));       // [ 1, 2 ]</code></pre>
             
 <dt>
     
-        <h4 class="name" id="clone"><span class="type-signature">(static) </span>clone<span class="signature">(src, deep<span class="signature-attributes">opt</span>, deep=false)</span><span class="type-signature"> &rarr; {*}</span></h4>
+        <h4 class="name" id="clone"><span class="type-signature">(static) </span>clone<span class="signature">(src, deep<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
         
     
@@ -501,16 +498,10 @@ console.log(Sumi.arr(1, 2));       // [ 1, 2 ]</code></pre>
         </tr>
 
     
-    </tbody>
-</table>
-            </td>
-        </tr>
-
-    
 
         <tr>
             
-                <td class="name"><code>deep=false</code></td>
+                <td class="name"><code>false</code></td>
             
 
             <td class="type">
@@ -523,22 +514,16 @@ console.log(Sumi.arr(1, 2));       // [ 1, 2 ]</code></pre>
             </td>
 
             
-                <td class="attributes">
-                
 
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
             
 
             <td class="description last">执行浅复制：只遍历第一子层级且不对引用类型做克隆处理</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
         </tr>
 
     
@@ -662,7 +647,7 @@ console.log(x.toString() == y.toString());  // true</code></pre>
             
 <dt>
     
-        <h4 class="name" id="compare"><span class="type-signature">(static) </span>compare<span class="signature">(a, b, ns<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+        <h4 class="name" id="compare"><span class="type-signature">(static) </span>compare<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
         
     
@@ -695,8 +680,6 @@ console.log(x.toString() == y.toString());  // true</code></pre>
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -722,14 +705,6 @@ console.log(x.toString() == y.toString());  // true</code></pre>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
@@ -753,51 +728,10 @@ console.log(x.toString() == y.toString());  // true</code></pre>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
             <td class="description last">要比较的第二个值</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ns</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">用于比较的属性值列表。优先级按先后次序。符合 a.b.c 格式的属性链路径，参见 <a href="Sumi.html#prop">Sumi.prop</a></td>
         </tr>
 
     
@@ -835,7 +769,7 @@ console.log(x.toString() == y.toString());  // true</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_compare.js.html">core/compare.js</a>, <a href="core_compare.js.html#line38">line 38</a>
+        <a href="core_compare.js.html">core/compare.js</a>, <a href="core_compare.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -893,19 +827,11 @@ console.log(x.toString() == y.toString());  // true</code></pre>
         
 
     
-        <h5>Examples</h5>
+        <h5>Example</h5>
         
     <pre class="prettyprint"><code>console.log(Sumi.compare(3, 1));               //  1
 console.log(Sumi.compare(NaN, 1));             // -1
 console.log(Sumi.compare(NaN, NaN));           //  0</code></pre>
-
-    <pre class="prettyprint"><code>var a = { x: 1, y: 2 };
-var b = { x: 1, y: 1, z: 1 };
-console.log(Sumi.compare(a, b));               // -1
-console.log(Sumi.compare(a, b, ['x']));        //  0
-console.log(Sumi.compare(a, b, ['y']));        //  1
-console.log(Sumi.compare(a, b, ['z']));        // -1
-console.log(Sumi.compare(a, b, ['x', 'y']));   //  1</code></pre>
 
     
 </dd>
@@ -4588,7 +4514,7 @@ console.log(Sumi.zip(['x', 'y', 'z'], [1, 2, 3]));
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Tue Feb 17 2015 13:13:29 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Wed Feb 25 2015 10:22:50 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
