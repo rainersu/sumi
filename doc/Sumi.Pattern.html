@@ -74,7 +74,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_pattern.js.html">match/pattern.js</a>, <a href="match_pattern.js.html#line37">line 37</a>
+        <a href="match_pattern.js.html">match/pattern.js</a>, <a href="match_pattern.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -286,6 +286,13 @@ console.log(match.is('44011119800315281Z'));   // false</code></pre>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#CN_TELEPHONE">Sumi.Pattern.CN_TELEPHONE</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -387,6 +394,13 @@ console.log(match.is('1891235118'));           // false</code></pre>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#CN_MOBILE_PHONE">Sumi.Pattern.CN_MOBILE_PHONE</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -485,6 +499,13 @@ console.log(match.is('021 556831'));          // false</code></pre>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#URL">Sumi.Pattern.URL</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -502,6 +523,294 @@ console.log(match.parse('admin@me.com'));
 
 console.log(match.match('他俩的邮件地址是candy@me.com和frank@live.com'));
 // [ 'candy@me.com', 'frank@live.com' ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="HEX_COLOR"><span class="type-signature">(static) </span>HEX_COLOR<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">十六进制 RGB 格式色彩值</a> 的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_pattern_HEX_COLOR.js.html">match/pattern/HEX_COLOR.js</a>, <a href="match_pattern_HEX_COLOR.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#RGBA_COLOR">Sumi.Pattern.RGBA_COLOR</a></li>
+        
+            <li><a href="Sumi.Pattern.html#HSLA_COLOR">Sumi.Pattern.HSLA_COLOR</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.HEX_COLOR;
+
+console.log(match.parse('#F03'));
+// [ { red: 255, green: 0, blue: 51, alpha: 1, match: '#F03' } ]
+
+console.log(match.parse('#FF0033'));
+// [ { red: 255, green: 0, blue: 51, alpha: 1, match: '#FF0033' } ]
+
+console.log(match.is('#H03'));   // false
+console.log(match.is('#f03'));   // true</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="HSLA_COLOR"><span class="type-signature">(static) </span>HSLA_COLOR<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">HSLA 格式色彩值</a> 的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_pattern_HSLA_COLOR.js.html">match/pattern/HSLA_COLOR.js</a>, <a href="match_pattern_HSLA_COLOR.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#HEX_COLOR">Sumi.Pattern.HEX_COLOR</a></li>
+        
+            <li><a href="Sumi.Pattern.html#RGBA_COLOR">Sumi.Pattern.RGBA_COLOR</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.HSLA_COLOR;
+ 
+console.log(match.parse('hsl(120, 100%, 50%)'));
+// [ { lightness: 0.5, saturation: 1, hue: 120, alpha: 1, match: 'hsl(120, 100%, 50%)' } ]
+
+console.log(match.parse('hsla(240, 100%, 50%, 0.05)'));
+// [ { alpha: 0.05, lightness: 0.5, saturation: 1, hue: 240, match: 'hsla(240, 100%, 50%, 0.05)' } ]</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="RGBA_COLOR"><span class="type-signature">(static) </span>RGBA_COLOR<span class="type-signature"> :<a href="Sumi.Match.html">Sumi.Match</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        处理 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">RGB 格式色彩值</a> 的正则表达式模板。
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Sumi.Match.html">Sumi.Match</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="match_pattern_RGBA_COLOR.js.html">match/pattern/RGBA_COLOR.js</a>, <a href="match_pattern_RGBA_COLOR.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#HEX_COLOR">Sumi.Pattern.HEX_COLOR</a></li>
+        
+            <li><a href="Sumi.Pattern.html#HSLA_COLOR">Sumi.Pattern.HSLA_COLOR</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>var match = Sumi.Pattern.RGBA_COLOR;
+ 
+console.log(match.parse('rgb(5, 30, 255)'));
+// [ { blue: 255, green: 30, red: 5, alpha: 1, match: 'rgb(5, 30, 255)' } ]
+
+console.log(match.parse('rgb(100%, 3%, 20%)'));
+// [ { blue: 51, green: 7.6499999999999995, red: 254.99999999999997, alpha: 1, match: 'rgb(100%, 3%, 20%)' } ]
+
+console.log(match.parse('rgba(5, 30, 255, 0.1)'));
+// [ { alpha: 0.1, blue: 255, green: 30, red: 5, match: 'rgba(5, 30, 255, 0.1)' } ]
+
+console.log(match.parse('rgba(100%, 3%, 20%, 0.1)'));
+// [ { alpha: 0.1, blue: 51, green: 7.6499999999999995, red: 254.99999999999997, match: 'rgba(100%, 3%, 20%, 0.1)' } ]</code></pre>
 
     
 </dd>
@@ -562,7 +871,7 @@ console.log(match.match('他俩的邮件地址是candy@me.com和frank@live.com')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="match_pattern_TIME.js.html">match/pattern/TIME.js</a>, <a href="match_pattern_TIME.js.html#line18">line 18</a>
+        <a href="match_pattern_TIME.js.html">match/pattern/TIME.js</a>, <a href="match_pattern_TIME.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -583,9 +892,9 @@ console.log(match.match('他俩的邮件地址是candy@me.com和frank@live.com')
 
 console.log(match.parse('9:15 A.M. or 10pm or 13:30:55'));
 // [  
-//     { hour:  9, minute: 15, second:  0 },
-//     { hour: 22, minute:  0, second:  0 },
-//     { hour: 13, minute: 30, second: 55 }
+//     { hour:  9, minute: 15, second:  0, match: '9:15 A.M.' },
+//     { hour: 22, minute:  0, second:  0, match: '10pm' },
+//     { hour: 13, minute: 30, second: 55, match: '13:30:55' }
 // ]
 
 console.log(match.parse('9:15 A.M. or 10pm', true, function (o) {
@@ -674,6 +983,13 @@ console.log(match.is('9:512'));       // false</code></pre>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Sumi.Pattern.html#EMAIL">Sumi.Pattern.EMAIL</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -721,13 +1037,13 @@ console.log(match.is('www.mac.com\\index'));   // false</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Const.html">Const</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.Sort.html">Sort</a></li><li><a href="Sumi.String.html">String</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Boolean.html">Boolean</a></li><li><a href="external-Date.html">Date</a></li><li><a href="external-Error.html">Error</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-JSON.html">JSON</a></li><li><a href="external-Math.html">Math</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-RegExp.html">RegExp</a></li><li><a href="external-String.html">String</a></li></ul><h3>Classes</h3><ul><li><a href="Sumi.Class.html">Class</a></li><li><a href="Sumi.Color.html">Color</a></li><li><a href="Sumi.Match.html">Match</a></li></ul><h3>Namespaces</h3><ul><li><a href="Sumi.html">Sumi</a></li><li><a href="Sumi.Array.html">Array</a></li><li><a href="Sumi.Boolean.html">Boolean</a></li><li><a href="Sumi.Const.html">Const</a></li><li><a href="Sumi.Date.html">Date</a></li><li><a href="Sumi.Error.html">Error</a></li><li><a href="Sumi.Escape.html">Escape</a></li><li><a href="Sumi.Function.html">Function</a></li><li><a href="Sumi.Hash.html">Hash</a></li><li><a href="Sumi.Math.html">Math</a></li><li><a href="Sumi.Number.html">Number</a></li><li><a href="Sumi.Object.html">Object</a></li><li><a href="Sumi.Pattern.html">Pattern</a></li><li><a href="Sumi.RegExp.html">RegExp</a></li><li><a href="Sumi.Sort.html">Sort</a></li><li><a href="Sumi.String.html">String</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Thu Feb 26 2015 21:19:42 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Fri Feb 27 2015 23:31:55 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
